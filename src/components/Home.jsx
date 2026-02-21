@@ -66,13 +66,11 @@ export default function Home({ onSelectMode }) {
       <p className="home-subtitle">Choisissez votre mode de révision</p>
       <div className="mode-cards">
         <button className="mode-card" onClick={() => onSelectMode("study")}>
-          <div className="mode-icon">📖</div>
-          <h2>Révision</h2>
+          <div className="mode-card-header"><span className="mode-icon">📖</span><h2>Révision</h2></div>
           <p>Parcourez toutes les questions à votre rythme. Consultez les explications pour mieux comprendre.</p>
         </button>
         <button className="mode-card" onClick={() => onSelectMode("test")}>
-          <div className="mode-icon">✍️</div>
-          <h2>Examen blanc</h2>
+          <div className="mode-card-header"><span className="mode-icon">✍️</span><h2>Examen blanc</h2></div>
           <p>Répondez à 40 questions aléatoires et obtenez un score. Les questions changent à chaque session.</p>
         </button>
       </div>

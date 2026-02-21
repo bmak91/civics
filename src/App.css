@@ -253,15 +253,20 @@ h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+.mode-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
 .mode-icon {
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
 }
 
 .mode-card h2 {
   font-size: 1.15rem;
   color: #2d3748;
-  margin-bottom: 0.4rem;
 }
 
 .mode-card p {
