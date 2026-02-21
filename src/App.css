@@ -286,10 +286,19 @@ h1 {
 
 .radar-chart-header {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
   margin-bottom: 0.75rem;
+}
+
+.radar-chart-header::before {
+  content: "";
+  flex: 1;
+}
+
+.radar-chart-header .stats-header-end {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .radar-chart-header h3 {

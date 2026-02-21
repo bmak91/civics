@@ -22,11 +22,13 @@ export default function Stats({ categories, sessions, categoryOf, onReset }) {
             Examens
           </button>
         </div>
-        {onReset && (
-          <button className="reset-stats-btn" onClick={onReset} title="Réinitialiser">
-            ↺
-          </button>
-        )}
+        <div className="stats-header-end">
+          {onReset && (
+            <button className="reset-stats-btn" onClick={onReset} title="Réinitialiser">
+              ↺
+            </button>
+          )}
+        </div>
       </div>
 
       {activeTab === "categories" ? (
