@@ -281,8 +281,9 @@ h1 {
 
 .radar-chart-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
   margin-bottom: 0.75rem;
 }
 
@@ -356,7 +357,126 @@ h1 {
   font-size: 0.8rem;
 }
 
+/* Stats Tabs */
+.stats-tabs {
+  display: flex;
+  background: #f0f2f5;
+  border-radius: 8px;
+  padding: 3px;
+}
+
+.stats-tab {
+  flex: 1;
+  padding: 0.35rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  color: #718096;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.stats-tab.active {
+  background: #fff;
+  color: #2d3748;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.stats-tab:not(.active):hover {
+  color: #4a5568;
+}
+
+/* Test Stats */
+.test-stats {
+  padding: 0.5rem 0;
+}
+
+.test-stats-empty {
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  margin: 0;
+}
+
+.test-stats-summary {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.test-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.test-stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2d3748;
+}
+
+.test-stat-label {
+  font-size: 0.7rem;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.test-session-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.test-session-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  background: #f7fafc;
+  font-size: 0.85rem;
+}
+
+.test-session-date {
+  color: #718096;
+  flex: 1;
+}
+
+.test-session-score {
+  color: #4a5568;
+  font-weight: 500;
+  margin-right: 0.75rem;
+}
+
+.test-session-pct {
+  font-weight: 700;
+  min-width: 3rem;
+  text-align: right;
+}
+
+.test-session-incomplete {
+  color: #a0aec0;
+  font-weight: 500;
+  font-size: 0.78rem;
+}
+
+.test-session-row.incomplete {
+  opacity: 0.7;
+}
+
 .reset-stats-btn {
+  position: absolute;
+  right: 0;
   padding: 0.3rem 0.75rem;
   background: none;
   color: #a0aec0;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAttempts, resetAllStats } from "../utils/tracker";
+import { getAttempts, getTestSessions, resetAllStats } from "../utils/tracker";
 import allQuestions from "../data/questions";
 import RadarChart from "./RadarChart";
 
@@ -35,11 +35,13 @@ function computeCategoryStats() {
 
 export default function Home({ onSelectMode }) {
   const [stats, setStats] = useState(() => computeCategoryStats());
+  const [sessions, setSessions] = useState(() => getTestSessions());
 
   function handleReset() {
     if (window.confirm("Reset all stats? This will clear all attempt history and test sessions.")) {
       resetAllStats();
       setStats(computeCategoryStats());
+      setSessions(getTestSessions());
     }
   }
 
@@ -56,7 +58,7 @@ export default function Home({ onSelectMode }) {
 
   return (
     <div className="home">
-      <RadarChart categories={radarCategories} onReset={hasStats ? handleReset : null} />
+      <RadarChart categories={radarCategories} sessions={sessions} onReset={hasStats ? handleReset : null} />
 
       <p className="home-subtitle">Choose how you want to practice</p>
       <div className="mode-cards">
