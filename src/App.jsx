@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Routes, Route, useNavigate, useParams } from "react-router-dom";
+import { Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
 import Home from "./components/Home";
 import StudyPicker from "./components/StudyPicker";
 import Flashcard from "./components/Flashcard";
@@ -101,6 +101,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <ScrollToTop />
       <h1>🇫🇷 Mon Examen Civique</h1>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -247,6 +248,14 @@ function TestResults({ score, onRestart, onHome }) {
       mode="test"
     />
   );
+}
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 }
 
 function StartTest({ onStart }) {
