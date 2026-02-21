@@ -95,3 +95,9 @@ export function getTestSession(sessionId) {
 export function getTestSessions() {
   return loadSessions();
 }
+
+export function resetAllStats() {
+  localStorage.removeItem(ATTEMPTS_KEY);
+  localStorage.removeItem(SESSIONS_KEY);
+  localStorage.removeItem("civics-test-seen");
+}
