@@ -34,13 +34,8 @@ function wrapText(text, maxChars) {
   return lines;
 }
 
-function formatDate(ts) {
-  return new Date(ts).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-}
-
-export default function RadarChart({ categories, sessions, onReset }) {
+export default function RadarChart({ categories }) {
   const [hovered, setHovered] = useState(null);
-  const [activeTab, setActiveTab] = useState("categories");
   const n = categories.length;
   const angleStep = 360 / n;
 
@@ -134,141 +129,67 @@ export default function RadarChart({ categories, sessions, onReset }) {
 
   const hoveredCat = hovered !== null ? categories[hovered] : null;
 
-  const allSessions = (sessions || []).slice().sort((a, b) => (b.finishedAt || b.lastActivityAt || b.startedAt) - (a.finishedAt || a.lastActivityAt || a.startedAt));
-  const completedSessions = allSessions.filter((s) => s.completed);
-  const avgScore = completedSessions.length > 0
-    ? Math.round(completedSessions.reduce((sum, s) => sum + (s.score / s.total) * 100, 0) / completedSessions.length)
-    : 0;
-  const bestScore = completedSessions.length > 0
-    ? Math.round(Math.max(...completedSessions.map((s) => (s.score / s.total) * 100)))
-    : 0;
-
   return (
-    <div className="radar-chart-section">
-      <div className="radar-chart-header">
-        <div className="stats-tabs">
-          <button
-            className={`stats-tab${activeTab === "categories" ? " active" : ""}`}
-            onClick={() => setActiveTab("categories")}
-          >
-            Categories
-          </button>
-          <button
-            className={`stats-tab${activeTab === "tests" ? " active" : ""}`}
-            onClick={() => setActiveTab("tests")}
-          >
-            Tests
-          </button>
-        </div>
-        {onReset && (
-          <button className="reset-stats-btn" onClick={onReset}>
-            Reset
-          </button>
+    <>
+      <div className="radar-chart-wrap">
+        <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="radar-chart-svg" overflow="visible">
+          <defs>
+            <linearGradient id="tricolore" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stopColor="#000091" />
+              <stop offset="33%" stopColor="#000091" />
+              <stop offset="33%" stopColor="#ffffff" />
+              <stop offset="66%" stopColor="#ffffff" />
+              <stop offset="66%" stopColor="#e0010e" />
+              <stop offset="100%" stopColor="#e0010e" />
+            </linearGradient>
+            <clipPath id="mastery-clip">
+              <polygon points={dataPolygonStr} />
+            </clipPath>
+          </defs>
+          {gridPolygons}
+          {axisLines}
+          <polygon
+            points={coveragePolygonStr}
+            fill="rgba(160,174,192,0.2)"
+            stroke="#a0aec0"
+            strokeWidth="1"
+            strokeDasharray="3 2"
+          />
+          <polygon
+            points={fullPolygonStr}
+            fill="url(#tricolore)"
+            clipPath="url(#mastery-clip)"
+          />
+          <polygon
+            points={dataPolygonStr}
+            fill="none"
+            stroke="#000091"
+            strokeWidth="1.2"
+          />
+          {dataPoints.map(([x, y], i) => (
+            <circle key={i} cx={x} cy={y} r="2.5" fill="#000091" />
+          ))}
+          {labels}
+          {hitAreas}
+        </svg>
+      </div>
+      <div className="radar-legend-inline">
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "#fff", border: "1.5px solid #000091" }} /> Mastery</span>
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
+      </div>
+      <div className="radar-tooltip-area">
+        {hoveredCat ? (
+          <p className="radar-tooltip">
+            <span className="radar-tooltip-dot" style={{ background: getColor(hoveredCat.pct) }} />
+            <strong>{hoveredCat.label}</strong>
+            <span className="radar-tooltip-detail">
+              {hoveredCat.pct}% correct &middot; {hoveredCat.attempted}/{hoveredCat.total} seen
+            </span>
+          </p>
+        ) : (
+          <p className="radar-tooltip radar-tooltip-hint">Hover a category for details</p>
         )}
       </div>
-
-      {activeTab === "categories" ? (
-        <>
-          <div className="radar-chart-wrap">
-            <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="radar-chart-svg" overflow="visible">
-              <defs>
-                <linearGradient id="tricolore" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#000091" />
-                  <stop offset="33%" stopColor="#000091" />
-                  <stop offset="33%" stopColor="#ffffff" />
-                  <stop offset="66%" stopColor="#ffffff" />
-                  <stop offset="66%" stopColor="#e0010e" />
-                  <stop offset="100%" stopColor="#e0010e" />
-                </linearGradient>
-                <clipPath id="mastery-clip">
-                  <polygon points={dataPolygonStr} />
-                </clipPath>
-              </defs>
-              {gridPolygons}
-              {axisLines}
-              <polygon
-                points={coveragePolygonStr}
-                fill="rgba(160,174,192,0.2)"
-                stroke="#a0aec0"
-                strokeWidth="1"
-                strokeDasharray="3 2"
-              />
-              <polygon
-                points={fullPolygonStr}
-                fill="url(#tricolore)"
-                clipPath="url(#mastery-clip)"
-              />
-              <polygon
-                points={dataPolygonStr}
-                fill="none"
-                stroke="#000091"
-                strokeWidth="1.2"
-              />
-              {dataPoints.map(([x, y], i) => (
-                <circle key={i} cx={x} cy={y} r="2.5" fill="#000091" />
-              ))}
-              {labels}
-              {hitAreas}
-            </svg>
-          </div>
-          <div className="radar-legend-inline">
-            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "#fff", border: "1.5px solid #000091" }} /> Mastery</span>
-            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
-          </div>
-          <div className="radar-tooltip-area">
-            {hoveredCat ? (
-              <p className="radar-tooltip">
-                <span className="radar-tooltip-dot" style={{ background: getColor(hoveredCat.pct) }} />
-                <strong>{hoveredCat.label}</strong>
-                <span className="radar-tooltip-detail">
-                  {hoveredCat.pct}% correct &middot; {hoveredCat.attempted}/{hoveredCat.total} seen
-                </span>
-              </p>
-            ) : (
-              <p className="radar-tooltip radar-tooltip-hint">Hover a category for details</p>
-            )}
-          </div>
-        </>
-      ) : (
-        <div className="test-stats">
-          {allSessions.length === 0 ? (
-            <p className="test-stats-empty">No tests yet</p>
-          ) : (
-            <>
-              <div className="test-stats-summary">
-                <div className="test-stat-box">
-                  <span className="test-stat-value">{completedSessions.length}</span>
-                  <span className="test-stat-label">Completed</span>
-                </div>
-                <div className="test-stat-box">
-                  <span className="test-stat-value">{avgScore}%</span>
-                  <span className="test-stat-label">Average</span>
-                </div>
-                <div className="test-stat-box">
-                  <span className="test-stat-value">{bestScore}%</span>
-                  <span className="test-stat-label">Best</span>
-                </div>
-              </div>
-              <div className="test-session-list">
-                {allSessions.map((s) => {
-                  const pct = Math.round((s.score / s.total) * 100);
-                  return (
-                    <div key={s.id} className={`test-session-row${s.completed ? "" : " incomplete"}`}>
-                      <span className="test-session-date">{formatDate(s.finishedAt || s.lastActivityAt || s.startedAt)}</span>
-                      <span className="test-session-score">{s.score}/{s.total}</span>
-                      {s.completed ? (
-                        <span className="test-session-pct" style={{ color: getColor(pct) }}>{pct}%</span>
-                      ) : (
-                        <span className="test-session-pct test-session-incomplete">In progress</span>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            </>
-          )}
-        </div>
-      )}
-    </div>
+    </>
   );
 }

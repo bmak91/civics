@@ -458,6 +458,12 @@ h1 {
   margin-right: 0.75rem;
 }
 
+.test-session-duration {
+  color: #a0aec0;
+  font-size: 0.78rem;
+  margin-right: 0.75rem;
+}
+
 .test-session-pct {
   font-weight: 700;
   min-width: 3rem;

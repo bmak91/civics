@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getAttempts, getTestSessions, resetAllStats } from "../utils/tracker";
 import allQuestions from "../data/questions";
-import RadarChart from "./RadarChart";
+import Stats from "./Stats";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 
@@ -58,7 +58,7 @@ export default function Home({ onSelectMode }) {
 
   return (
     <div className="home">
-      <RadarChart categories={radarCategories} sessions={sessions} onReset={hasStats ? handleReset : null} />
+      <Stats categories={radarCategories} sessions={sessions} onReset={hasStats ? handleReset : null} />
 
       <p className="home-subtitle">Choose how you want to practice</p>
       <div className="mode-cards">
