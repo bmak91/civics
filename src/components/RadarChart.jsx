@@ -74,7 +74,10 @@ export default function RadarChart({ categories, sessions, onReset }) {
 
   const labels = categories.map((cat, i) => {
     const angle = i * angleStep;
-    const [x, y] = polarToXY(angle, RADIUS + LABEL_OFFSET);
+    const lines = wrapText(cat.label, MAX_LINE_CHARS);
+    const isCompact = cat.label === "Vivre dans la société française" || cat.label === "Système institutionnel et politique";
+    const offset = isCompact ? LABEL_OFFSET - 6 : LABEL_OFFSET;
+    const [x, y] = polarToXY(angle, RADIUS + offset);
     let anchor = "middle";
     if (x < CENTER - 3) anchor = "end";
     else if (x > CENTER + 3) anchor = "start";
@@ -83,7 +86,6 @@ export default function RadarChart({ categories, sessions, onReset }) {
     if (y < CENTER - 10) dy = -4;
     else if (y > CENTER + 10) dy = 4;
 
-    const lines = wrapText(cat.label, MAX_LINE_CHARS);
     const lineHeight = 9;
     const startDy = dy - ((lines.length - 1) * lineHeight) / 2;
     const isHovered = hovered === i;
