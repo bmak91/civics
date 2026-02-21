@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { getAttempts, resetAllStats } from "../utils/tracker";
 import allQuestions from "../data/questions";
+import RadarChart from "./RadarChart";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 
@@ -44,6 +45,15 @@ export default function Home({ onSelectMode }) {
 
   const hasStats = Object.values(stats).some((s) => s.attempts > 0);
 
+  const radarCategories = Object.entries(stats).map(([category, s]) => ({
+    label: category,
+    pct: s.attempts > 0 ? Math.round((s.correct / s.attempts) * 100) : 0,
+    attempted: s.attempted,
+    total: s.total,
+    correct: s.correct,
+    attempts: s.attempts,
+  }));
+
   return (
     <div className="home">
       <p className="home-subtitle">Choose how you want to practice</p>
@@ -60,36 +70,7 @@ export default function Home({ onSelectMode }) {
         </button>
       </div>
 
-      <div className="category-stats">
-        <h3>Stats by Category</h3>
-        {Object.entries(stats).map(([category, s]) => {
-          const pct = s.attempts > 0 ? Math.round((s.correct / s.attempts) * 100) : null;
-          return (
-            <div key={category} className="category-row">
-              <div className="category-info">
-                <span className="category-name">{category}</span>
-                <span className="category-detail">
-                  {s.attempted}/{s.total} questions seen
-                  {s.attempts > 0 && <> &middot; {s.correct}/{s.attempts} correct</>}
-                </span>
-              </div>
-              {pct !== null ? (
-                <div className="category-bar-wrap">
-                  <div
-                    className={`category-bar ${pct >= 80 ? "good" : pct >= 50 ? "ok" : "weak"}`}
-                    style={{ width: `${pct}%` }}
-                  />
-                </div>
-              ) : (
-                <div className="category-bar-wrap">
-                  <div className="category-bar" style={{ width: 0 }} />
-                </div>
-              )}
-              <span className="category-pct">{pct !== null ? `${pct}%` : "—"}</span>
-            </div>
-          );
-        })}
-      </div>
+      <RadarChart categories={radarCategories} />
 
       {hasStats && (
         <button className="reset-stats-btn" onClick={handleReset}>
