@@ -175,8 +175,8 @@ export default function RadarChart({ categories }) {
         </svg>
       </div>
       <div className="radar-legend-inline">
-        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "#fff", border: "1.5px solid #000091" }} /> Mastery</span>
-        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "#fff", border: "1.5px solid #000091" }} /> Maîtrise</span>
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Couverture</span>
       </div>
       <div className="radar-tooltip-area">
         {hoveredCat ? (
@@ -184,11 +184,11 @@ export default function RadarChart({ categories }) {
             <span className="radar-tooltip-dot" style={{ background: getColor(hoveredCat.pct) }} />
             <strong>{hoveredCat.label}</strong>
             <span className="radar-tooltip-detail">
-              {hoveredCat.pct}% correct &middot; {hoveredCat.attempted}/{hoveredCat.total} seen
+              {hoveredCat.pct}% correct &middot; {hoveredCat.attempted}/{hoveredCat.total} vues
             </span>
           </p>
         ) : (
-          <p className="radar-tooltip radar-tooltip-hint">Hover a category for details</p>
+          <p className="radar-tooltip radar-tooltip-hint">Survolez une catégorie pour les détails</p>
         )}
       </div>
     </>

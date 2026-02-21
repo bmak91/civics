@@ -7,7 +7,7 @@ function getColor(pct) {
 }
 
 function formatDate(ts) {
-  return new Date(ts).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  return new Date(ts).toLocaleDateString("fr-FR", { month: "short", day: "numeric", year: "numeric" });
 }
 
 function formatDuration(ms) {
@@ -35,7 +35,7 @@ export default function TestStats({ sessions, categoryOf }) {
   if (allSessions.length === 0) {
     return (
       <div className="test-stats">
-        <p className="test-stats-empty">No tests yet</p>
+        <p className="test-stats-empty">Aucun examen pour l'instant</p>
       </div>
     );
   }
@@ -45,20 +45,20 @@ export default function TestStats({ sessions, categoryOf }) {
       <div className="test-stats-summary">
         <div className="test-stat-box">
           <span className="test-stat-value">{completedSessions.length}</span>
-          <span className="test-stat-label">Completed</span>
+          <span className="test-stat-label">Terminés</span>
         </div>
         <div className="test-stat-box">
           <span className="test-stat-value">{avgScore}%</span>
-          <span className="test-stat-label">Average</span>
+          <span className="test-stat-label">Moyenne</span>
         </div>
         <div className="test-stat-box">
           <span className="test-stat-value">{bestScore}%</span>
-          <span className="test-stat-label">Best</span>
+          <span className="test-stat-label">Meilleur</span>
         </div>
         {avgDuration && (
           <div className="test-stat-box">
             <span className="test-stat-value">{avgDuration}</span>
-            <span className="test-stat-label">Avg Time</span>
+            <span className="test-stat-label">Temps moy.</span>
           </div>
         )}
       </div>
@@ -91,7 +91,7 @@ export default function TestStats({ sessions, categoryOf }) {
                     <span className="test-session-pct" style={{ color: getColor(pct) }}>{pct}%</span>
                   </>
                 ) : (
-                  <span className="test-session-pct test-session-incomplete">In progress</span>
+                  <span className="test-session-pct test-session-incomplete">En cours</span>
                 )}
               </div>
               {catTotal > 0 && (

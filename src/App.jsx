@@ -92,7 +92,7 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>Civics Study Flashcards</h1>
+      <h1>Mon Examen Civique</h1>
       <Routes>
         <Route path="/" element={<Home onSelectMode={handleSelectMode} />} />
         <Route

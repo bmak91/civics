@@ -13,18 +13,18 @@ export default function Stats({ categories, sessions, categoryOf, onReset }) {
             className={`stats-tab${activeTab === "categories" ? " active" : ""}`}
             onClick={() => setActiveTab("categories")}
           >
-            Categories
+            Catégories
           </button>
           <button
             className={`stats-tab${activeTab === "tests" ? " active" : ""}`}
             onClick={() => setActiveTab("tests")}
           >
-            Tests
+            Examens
           </button>
         </div>
         {onReset && (
           <button className="reset-stats-btn" onClick={onReset}>
-            Reset
+            Réinitialiser
           </button>
         )}
       </div>

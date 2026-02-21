@@ -41,7 +41,7 @@ export default function Home({ onSelectMode }) {
   const [sessions, setSessions] = useState(() => getTestSessions());
 
   function handleReset() {
-    if (window.confirm("Reset all stats? This will clear all attempt history and test sessions.")) {
+    if (window.confirm("Réinitialiser toutes les statistiques ? Cela effacera tout l'historique.")) {
       resetAllStats();
       setStats(computeCategoryStats());
       setSessions(getTestSessions());
@@ -63,17 +63,17 @@ export default function Home({ onSelectMode }) {
     <div className="home">
       <Stats categories={radarCategories} sessions={sessions} categoryOf={categoryOf} onReset={hasStats ? handleReset : null} />
 
-      <p className="home-subtitle">Choose how you want to practice</p>
+      <p className="home-subtitle">Choisissez votre mode de révision</p>
       <div className="mode-cards">
         <button className="mode-card" onClick={() => onSelectMode("study")}>
           <div className="mode-icon">📖</div>
-          <h2>Study Mode</h2>
-          <p>Go through all questions at your own pace. Review explanations and learn the material.</p>
+          <h2>Révision</h2>
+          <p>Parcourez toutes les questions à votre rythme. Consultez les explications pour mieux comprendre.</p>
         </button>
         <button className="mode-card" onClick={() => onSelectMode("test")}>
           <div className="mode-icon">✍️</div>
-          <h2>Test Mode</h2>
-          <p>Answer 40 random questions and get a score at the end. Questions rotate so you see them all over time.</p>
+          <h2>Examen blanc</h2>
+          <p>Répondez à 40 questions aléatoires et obtenez un score. Les questions changent à chaque session.</p>
         </button>
       </div>
     </div>
