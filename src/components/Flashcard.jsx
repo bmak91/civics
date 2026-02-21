@@ -10,7 +10,7 @@ function shuffleChoices(choices, correctId) {
   return indexed;
 }
 
-export default function Flashcard({ question, onNext, onHome, current, total, mode, score, sessionId }) {
+export default function Flashcard({ question, onNext, onAnswer, onHome, current, total, mode, score, sessionId }) {
   const shuffled = useMemo(
     () => shuffleChoices(question.choices, question.correctId),
     [question]
@@ -23,11 +23,13 @@ export default function Flashcard({ question, onNext, onHome, current, total, mo
   function handleSelect(index) {
     if (isAnswered) return;
     setSelected(index);
-    recordAttempt(question.id, shuffled[index].id, index, shuffled[index].isCorrect, sessionId);
+    const correct = shuffled[index].isCorrect;
+    recordAttempt(question.id, shuffled[index].id, index, correct, sessionId);
+    onAnswer(correct);
   }
 
   function handleNext() {
-    onNext(isCorrect);
+    onNext();
   }
 
   return (

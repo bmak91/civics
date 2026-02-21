@@ -5,54 +5,24 @@ import Flashcard from "./components/Flashcard";
 import Results from "./components/Results";
 import allQuestions from "./data/questions";
 import pickTestQuestions from "./utils/pickTestQuestions";
-import { startTestSession, updateTestSession, completeTestSession } from "./utils/tracker";
+import { startTestSession, updateTestSession, completeTestSession, getTestSession } from "./utils/tracker";
 import "./App.css";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
+const questionsById = Object.fromEntries(questions.map((q) => [q.id, q]));
 
-const TEST_SESSION_KEY = "civics-test-session";
-const TEST_SESSION_ID_KEY = "civics-test-session-id";
-
-function saveTestSession(qs, sessionId) {
-  sessionStorage.setItem(TEST_SESSION_KEY, JSON.stringify(qs.map((q) => q.id)));
-  sessionStorage.setItem(TEST_SESSION_ID_KEY, sessionId);
-}
-
-function loadTestSession() {
-  try {
-    const ids = JSON.parse(sessionStorage.getItem(TEST_SESSION_KEY));
-    const sessionId = sessionStorage.getItem(TEST_SESSION_ID_KEY);
-    if (!ids || !sessionId) return null;
-    const qs = ids.map((id) => questions.find((q) => q.id === id)).filter(Boolean);
-    return qs.length > 0 ? { qs, sessionId } : null;
-  } catch {
-    return null;
-  }
+function resolveSessionQuestions(sessionId) {
+  const session = getTestSession(sessionId);
+  if (!session) return null;
+  const qs = session.questionIds.map((id) => questionsById[id]).filter(Boolean);
+  return qs.length > 0 ? { qs, session } : null;
 }
 
 export default function App() {
   const [score, setScore] = useState(0);
-  const testQuestions = useRef(null);
-  const testSessionId = useRef(null);
   const answeredCount = useRef(0);
+  const currentSessionId = useRef(null);
   const navigate = useNavigate();
-
-  function getTestQuestions() {
-    if (!testQuestions.current) {
-      const saved = loadTestSession();
-      if (saved) {
-        testQuestions.current = saved.qs;
-        testSessionId.current = saved.sessionId;
-      } else {
-        const qs = pickTestQuestions(questions);
-        const sessionId = startTestSession(qs.map((q) => q.id));
-        testQuestions.current = qs;
-        testSessionId.current = sessionId;
-        saveTestSession(qs, sessionId);
-      }
-    }
-    return testQuestions.current;
-  }
 
   function handleSelectMode(mode) {
     setScore(0);
@@ -60,24 +30,18 @@ export default function App() {
     if (mode === "test") {
       const qs = pickTestQuestions(questions);
       const sessionId = startTestSession(qs.map((q) => q.id));
-      testQuestions.current = qs;
-      testSessionId.current = sessionId;
-      saveTestSession(qs, sessionId);
-      navigate(`/test/${qs[0].id}`);
+      currentSessionId.current = sessionId;
+      navigate(`/test/${sessionId}/${qs[0].id}`);
     } else {
-      testQuestions.current = null;
-      testSessionId.current = null;
+      currentSessionId.current = null;
       navigate(`/study/${questions[0].id}`);
     }
   }
 
   function handleHome() {
     setScore(0);
-    testQuestions.current = null;
-    testSessionId.current = null;
     answeredCount.current = 0;
-    sessionStorage.removeItem(TEST_SESSION_KEY);
-    sessionStorage.removeItem(TEST_SESSION_ID_KEY);
+    currentSessionId.current = null;
     navigate("/");
   }
 
@@ -87,33 +51,42 @@ export default function App() {
     if (mode === "test") {
       const qs = pickTestQuestions(questions);
       const sessionId = startTestSession(qs.map((q) => q.id));
-      testQuestions.current = qs;
-      testSessionId.current = sessionId;
-      saveTestSession(qs, sessionId);
-      navigate(`/test/${qs[0].id}`);
+      currentSessionId.current = sessionId;
+      navigate(`/test/${sessionId}/${qs[0].id}`);
     } else {
       navigate(`/study/${questions[0].id}`);
     }
   }
 
-  function handleNext(mode, questionId, wasCorrect) {
+  function handleAnswer(sessionId, wasCorrect) {
     const newScore = wasCorrect ? score + 1 : score;
     setScore(newScore);
     answeredCount.current += 1;
 
-    if (mode === "test" && testSessionId.current) {
-      updateTestSession(testSessionId.current, newScore, answeredCount.current);
+    if (sessionId) {
+      currentSessionId.current = sessionId;
+      updateTestSession(sessionId, newScore, answeredCount.current);
     }
+  }
 
-    const qs = mode === "test" ? getTestQuestions() : questions;
+  function handleNext(mode, sessionId, questionId, qs) {
     const currentIndex = qs.findIndex((q) => q.id === questionId);
     if (currentIndex + 1 < qs.length) {
-      navigate(`/${mode}/${qs[currentIndex + 1].id}`);
-    } else {
-      if (mode === "test" && testSessionId.current) {
-        completeTestSession(testSessionId.current);
+      const nextId = qs[currentIndex + 1].id;
+      if (mode === "test") {
+        navigate(`/test/${sessionId}/${nextId}`);
+      } else {
+        navigate(`/study/${nextId}`);
       }
-      navigate(`/${mode}/results`);
+    } else {
+      if (mode === "test" && sessionId) {
+        completeTestSession(sessionId);
+      }
+      if (mode === "test") {
+        navigate(`/test/${sessionId}/results`);
+      } else {
+        navigate("/study/results");
+      }
     }
   }
 
@@ -135,14 +108,12 @@ export default function App() {
           }
         />
         <Route
-          path="/test/results"
+          path="/test/:sessionId/results"
           element={
-            <Results
+            <TestResults
               score={score}
-              total={getTestQuestions().length}
               onRestart={() => handleRestart("test")}
               onHome={handleHome}
-              mode="test"
             />
           }
         />
@@ -151,21 +122,21 @@ export default function App() {
           element={
             <StudyQuestion
               questions={questions}
-              onNext={handleNext}
+              onAnswer={(correct) => handleAnswer(null, correct)}
+              onNext={(questionId) => handleNext("study", null, questionId, questions)}
               onHome={handleHome}
               score={score}
             />
           }
         />
         <Route
-          path="/test/:questionId"
+          path="/test/:sessionId/:questionId"
           element={
             <TestQuestion
-              getTestQuestions={getTestQuestions}
+              onAnswer={handleAnswer}
               onNext={handleNext}
               onHome={handleHome}
               score={score}
-              sessionId={testSessionId.current}
             />
           }
         />
@@ -174,7 +145,7 @@ export default function App() {
   );
 }
 
-function StudyQuestion({ questions, onNext, onHome, score }) {
+function StudyQuestion({ questions, onAnswer, onNext, onHome, score }) {
   const { questionId } = useParams();
   const navigate = useNavigate();
   const currentIndex = questions.findIndex((q) => q.id === questionId);
@@ -188,7 +159,8 @@ function StudyQuestion({ questions, onNext, onHome, score }) {
     <Flashcard
       key={questionId}
       question={questions[currentIndex]}
-      onNext={(wasCorrect) => onNext("study", questionId, wasCorrect)}
+      onAnswer={onAnswer}
+      onNext={() => onNext(questionId)}
       onHome={onHome}
       current={currentIndex + 1}
       total={questions.length}
@@ -198,10 +170,17 @@ function StudyQuestion({ questions, onNext, onHome, score }) {
   );
 }
 
-function TestQuestion({ getTestQuestions, onNext, onHome, score, sessionId }) {
-  const { questionId } = useParams();
+function TestQuestion({ onAnswer, onNext, onHome, score }) {
+  const { sessionId, questionId } = useParams();
   const navigate = useNavigate();
-  const qs = getTestQuestions();
+
+  const resolved = resolveSessionQuestions(sessionId);
+  if (!resolved) {
+    navigate("/", { replace: true });
+    return null;
+  }
+
+  const { qs } = resolved;
   const currentIndex = qs.findIndex((q) => q.id === questionId);
 
   if (currentIndex === -1) {
@@ -213,13 +192,35 @@ function TestQuestion({ getTestQuestions, onNext, onHome, score, sessionId }) {
     <Flashcard
       key={questionId}
       question={qs[currentIndex]}
-      onNext={(wasCorrect) => onNext("test", questionId, wasCorrect)}
+      onAnswer={(correct) => onAnswer(sessionId, correct)}
+      onNext={() => onNext("test", sessionId, questionId, qs)}
       onHome={onHome}
       current={currentIndex + 1}
       total={qs.length}
       mode="test"
       score={score}
       sessionId={sessionId}
+    />
+  );
+}
+
+function TestResults({ score, onRestart, onHome }) {
+  const { sessionId } = useParams();
+  const navigate = useNavigate();
+
+  const resolved = resolveSessionQuestions(sessionId);
+  if (!resolved) {
+    navigate("/", { replace: true });
+    return null;
+  }
+
+  return (
+    <Results
+      score={score}
+      total={resolved.qs.length}
+      onRestart={onRestart}
+      onHome={onHome}
+      mode="test"
     />
   );
 }

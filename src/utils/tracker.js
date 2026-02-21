@@ -88,6 +88,10 @@ export function completeTestSession(sessionId) {
   }
 }
 
+export function getTestSession(sessionId) {
+  return loadSessions().find((s) => s.id === sessionId) || null;
+}
+
 export function getTestSessions() {
   return loadSessions();
 }
