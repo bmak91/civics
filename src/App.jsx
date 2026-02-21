@@ -1,15 +1,23 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
 import Home from "./components/Home";
+import StudyPicker from "./components/StudyPicker";
 import Flashcard from "./components/Flashcard";
 import Results from "./components/Results";
 import allQuestions from "./data/questions";
+import { SLUG_TO_CATEGORY } from "./data/categories";
 import pickTestQuestions from "./utils/pickTestQuestions";
 import { startTestSession, updateTestSession, completeTestSession, getTestSession } from "./utils/tracker";
 import "./App.css";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 const questionsById = Object.fromEntries(questions.map((q) => [q.id, q]));
+
+function getStudyQuestions(slug) {
+  if (!slug || slug === "all") return questions;
+  const category = SLUG_TO_CATEGORY[slug];
+  return category ? questions.filter((q) => q.category === category) : questions;
+}
 
 function resolveSessionQuestions(sessionId) {
   const session = getTestSession(sessionId);
@@ -24,18 +32,18 @@ export default function App() {
   const currentSessionId = useRef(null);
   const navigate = useNavigate();
 
-  function handleSelectMode(mode) {
+  function handleStartTest() {
     setScore(0);
     answeredCount.current = 0;
-    if (mode === "test") {
-      const qs = pickTestQuestions(questions);
-      const sessionId = startTestSession(qs.map((q) => q.id));
-      currentSessionId.current = sessionId;
-      navigate(`/test/${sessionId}/${qs[0].id}`);
-    } else {
-      currentSessionId.current = null;
-      navigate(`/study/${questions[0].id}`);
-    }
+    const qs = pickTestQuestions(questions);
+    const sessionId = startTestSession(qs.map((q) => q.id));
+    currentSessionId.current = sessionId;
+    navigate(`/test/${sessionId}/${qs[0].id}`, { replace: true });
+  }
+
+  function handleStudyStart() {
+    setScore(0);
+    answeredCount.current = 0;
   }
 
   function handleHome() {
@@ -45,7 +53,7 @@ export default function App() {
     navigate("/");
   }
 
-  function handleRestart(mode) {
+  function handleRestart(mode, slug) {
     setScore(0);
     answeredCount.current = 0;
     if (mode === "test") {
@@ -54,7 +62,8 @@ export default function App() {
       currentSessionId.current = sessionId;
       navigate(`/test/${sessionId}/${qs[0].id}`);
     } else {
-      navigate(`/study/${questions[0].id}`);
+      const qs = getStudyQuestions(slug);
+      navigate(`/study/${slug}/${qs[0].id}`);
     }
   }
 
@@ -69,14 +78,14 @@ export default function App() {
     }
   }
 
-  function handleNext(mode, sessionId, questionId, qs) {
+  function handleNext(mode, sessionId, questionId, qs, slug) {
     const currentIndex = qs.findIndex((q) => q.id === questionId);
     if (currentIndex + 1 < qs.length) {
       const nextId = qs[currentIndex + 1].id;
       if (mode === "test") {
         navigate(`/test/${sessionId}/${nextId}`);
       } else {
-        navigate(`/study/${nextId}`);
+        navigate(`/study/${slug}/${nextId}`);
       }
     } else {
       if (mode === "test" && sessionId) {
@@ -85,7 +94,7 @@ export default function App() {
       if (mode === "test") {
         navigate(`/test/${sessionId}/results`);
       } else {
-        navigate("/study/results");
+        navigate(`/study/${slug}/results`);
       }
     }
   }
@@ -94,16 +103,16 @@ export default function App() {
     <div className="app">
       <h1>🇫🇷 Mon Examen Civique</h1>
       <Routes>
-        <Route path="/" element={<Home onSelectMode={handleSelectMode} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
+        <Route path="/study" element={<StudyPicker onSelect={handleStudyStart} />} />
         <Route
-          path="/study/results"
+          path="/study/:slug/results"
           element={
-            <Results
+            <StudyResults
               score={score}
-              total={questions.length}
-              onRestart={() => handleRestart("study")}
+              onRestart={handleRestart}
               onHome={handleHome}
-              mode="study"
             />
           }
         />
@@ -118,12 +127,11 @@ export default function App() {
           }
         />
         <Route
-          path="/study/:questionId"
+          path="/study/:slug/:questionId"
           element={
             <StudyQuestion
-              questions={questions}
               onAnswer={(correct) => handleAnswer(null, correct)}
-              onNext={(questionId) => handleNext("study", null, questionId, questions)}
+              onNext={handleNext}
               onHome={handleHome}
               score={score}
             />
@@ -145,10 +153,11 @@ export default function App() {
   );
 }
 
-function StudyQuestion({ questions, onAnswer, onNext, onHome, score }) {
-  const { questionId } = useParams();
+function StudyQuestion({ onAnswer, onNext, onHome, score }) {
+  const { slug, questionId } = useParams();
   const navigate = useNavigate();
-  const currentIndex = questions.findIndex((q) => q.id === questionId);
+  const qs = getStudyQuestions(slug);
+  const currentIndex = qs.findIndex((q) => q.id === questionId);
 
   if (currentIndex === -1) {
     navigate("/", { replace: true });
@@ -158,14 +167,29 @@ function StudyQuestion({ questions, onAnswer, onNext, onHome, score }) {
   return (
     <Flashcard
       key={questionId}
-      question={questions[currentIndex]}
+      question={qs[currentIndex]}
       onAnswer={onAnswer}
-      onNext={() => onNext(questionId)}
+      onNext={() => onNext("study", null, questionId, qs, slug)}
       onHome={onHome}
       current={currentIndex + 1}
-      total={questions.length}
+      total={qs.length}
       mode="study"
       score={score}
+    />
+  );
+}
+
+function StudyResults({ score, onRestart, onHome }) {
+  const { slug } = useParams();
+  const qs = getStudyQuestions(slug);
+
+  return (
+    <Results
+      score={score}
+      total={qs.length}
+      onRestart={() => onRestart("study", slug)}
+      onHome={onHome}
+      mode="study"
     />
   );
 }
@@ -223,4 +247,15 @@ function TestResults({ score, onRestart, onHome }) {
       mode="test"
     />
   );
+}
+
+function StartTest({ onStart }) {
+  const started = useRef(false);
+  useEffect(() => {
+    if (!started.current) {
+      started.current = true;
+      onStart();
+    }
+  }, [onStart]);
+  return null;
 }

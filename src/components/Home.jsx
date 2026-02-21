@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { getAttempts, getTestSessions, resetAllStats } from "../utils/tracker";
 import allQuestions from "../data/questions";
 import Stats from "./Stats";
@@ -36,7 +37,7 @@ function computeCategoryStats() {
   return categories;
 }
 
-export default function Home({ onSelectMode }) {
+export default function Home() {
   const [stats, setStats] = useState(() => computeCategoryStats());
   const [sessions, setSessions] = useState(() => getTestSessions());
 
@@ -65,14 +66,14 @@ export default function Home({ onSelectMode }) {
 
       <p className="home-subtitle">Choisissez votre mode de révision</p>
       <div className="mode-cards">
-        <button className="mode-card" onClick={() => onSelectMode("study")}>
+        <Link to="/study" className="mode-card">
           <div className="mode-card-header"><span className="mode-icon">📖</span><h2>Révision</h2></div>
           <p>Parcourez toutes les questions à votre rythme. Consultez les explications pour mieux comprendre.</p>
-        </button>
-        <button className="mode-card" onClick={() => onSelectMode("test")}>
+        </Link>
+        <Link to="/test/new" className="mode-card">
           <div className="mode-card-header"><span className="mode-icon">✍️</span><h2>Examen blanc</h2></div>
           <p>Répondez à 40 questions aléatoires et obtenez un score. Les questions changent à chaque session.</p>
-        </button>
+        </Link>
       </div>
     </div>
   );

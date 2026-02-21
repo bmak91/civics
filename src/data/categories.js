@@ -11,3 +11,15 @@ export const CATEGORY_COLORS = {
   [HISTOIRE_ET_GEOGRAPHIE]: "#f59e0b",
   [VIVRE_EN_SOCIETE]: "#ec4899",
 };
+
+export const CATEGORY_SLUGS = {
+  [PRINCIPES_ET_VALEURS]: "principes",
+  [DROITS_ET_DEVOIRS]: "droits",
+  [SYSTEME_INSTITUTIONNEL]: "institutions",
+  [HISTOIRE_ET_GEOGRAPHIE]: "histoire",
+  [VIVRE_EN_SOCIETE]: "societe",
+};
+
+export const SLUG_TO_CATEGORY = Object.fromEntries(
+  Object.entries(CATEGORY_SLUGS).map(([name, slug]) => [slug, name])
+);

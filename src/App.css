@@ -1,5 +1,4 @@
 .app {
-  max-width: 640px;
   width: 100%;
 }
 
@@ -226,6 +225,61 @@ h1 {
   background: #cbd5e0;
 }
 
+/* Study Picker */
+.study-picker {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.study-picker-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+.study-picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.study-picker-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  color: #2d3748;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.study-picker-btn:hover {
+  border-color: #90cdf4;
+  background: #ebf8ff;
+}
+
+.study-picker-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #edf2f7;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
 /* Home */
 .home-subtitle {
   color: #718096;
@@ -245,6 +299,8 @@ h1 {
   padding: 1.5rem;
   text-align: left;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
   transition: border-color 0.15s, box-shadow 0.15s;
 }
 
