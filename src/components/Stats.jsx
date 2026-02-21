@@ -23,8 +23,8 @@ export default function Stats({ categories, sessions, categoryOf, onReset }) {
           </button>
         </div>
         {onReset && (
-          <button className="reset-stats-btn" onClick={onReset}>
-            Réinitialiser
+          <button className="reset-stats-btn" onClick={onReset} title="Réinitialiser">
+            ↺
           </button>
         )}
       </div>

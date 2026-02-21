@@ -74,7 +74,7 @@ export default function RadarChart({ categories }) {
     const angle = i * angleStep;
     const lines = wrapText(cat.label, MAX_LINE_CHARS);
     const isCompact = cat.label === VIVRE_EN_SOCIETE || cat.label === SYSTEME_INSTITUTIONNEL;
-    const offset = isCompact ? LABEL_OFFSET - 6 : LABEL_OFFSET;
+    const offset = isCompact ? LABEL_OFFSET - 8 : LABEL_OFFSET;
     const [x, y] = polarToXY(angle, RADIUS + offset);
     let anchor = "middle";
     if (x < CENTER - 3) anchor = "end";

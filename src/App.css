@@ -288,7 +288,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  gap: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -526,14 +526,13 @@ h1 {
 }
 
 .reset-stats-btn {
-  position: absolute;
-  right: 0;
-  padding: 0.3rem 0.75rem;
+  padding: 0.25rem;
   background: none;
   color: #a0aec0;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }
