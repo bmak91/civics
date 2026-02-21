@@ -2,8 +2,11 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import Home from "./components/Home";
 import Flashcard from "./components/Flashcard";
 import Results from "./components/Results";
-import questions from "./data/questions";
+import allQuestions from "./data/questions";
 import pickTestQuestions from "./utils/pickTestQuestions";
+
+// Only use questions that have choices populated
+const questions = allQuestions.filter((q) => q.choices.length > 0);
 import "./App.css";
 
 function parseHash() {
