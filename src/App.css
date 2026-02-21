@@ -429,6 +429,29 @@ h1 {
   letter-spacing: 0.03em;
 }
 
+.test-stats-color-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: #4a5568;
+}
+
+.test-stats-key-item {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.test-stats-key-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
 .test-session-list {
   display: flex;
   flex-direction: column;
@@ -439,12 +462,29 @@ h1 {
 
 .test-session-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: 0.4rem 0.5rem;
   border-radius: 6px;
   background: #f7fafc;
   font-size: 0.85rem;
+}
+
+.test-session-row-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.test-session-cat-bar {
+  display: flex;
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 0.3rem;
+}
+
+.test-session-cat-seg {
+  display: block;
 }
 
 .test-session-date {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { VIVRE_EN_SOCIETE, SYSTEME_INSTITUTIONNEL } from "../data/categories.js";
 
 const RADIUS = 120;
 const LABEL_OFFSET = 14;
@@ -72,7 +73,7 @@ export default function RadarChart({ categories }) {
   const labels = categories.map((cat, i) => {
     const angle = i * angleStep;
     const lines = wrapText(cat.label, MAX_LINE_CHARS);
-    const isCompact = cat.label === "Vivre dans la société française" || cat.label === "Système institutionnel et politique";
+    const isCompact = cat.label === VIVRE_EN_SOCIETE || cat.label === SYSTEME_INSTITUTIONNEL;
     const offset = isCompact ? LABEL_OFFSET - 6 : LABEL_OFFSET;
     const [x, y] = polarToXY(angle, RADIUS + offset);
     let anchor = "middle";

@@ -5,14 +5,17 @@ import Stats from "./Stats";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 
+// Question ID → category name map (stable, never changes)
+const categoryOf = {};
+for (const q of questions) {
+  categoryOf[q.id] = q.category;
+}
+
 function computeCategoryStats() {
   const attempts = getAttempts();
 
-  // Build category map: questionId -> category
-  const categoryOf = {};
   const categories = {};
   for (const q of questions) {
-    categoryOf[q.id] = q.category;
     if (!categories[q.category]) {
       categories[q.category] = { total: 0, attempted: 0, correct: 0, attempts: 0 };
     }
@@ -58,7 +61,7 @@ export default function Home({ onSelectMode }) {
 
   return (
     <div className="home">
-      <Stats categories={radarCategories} sessions={sessions} onReset={hasStats ? handleReset : null} />
+      <Stats categories={radarCategories} sessions={sessions} categoryOf={categoryOf} onReset={hasStats ? handleReset : null} />
 
       <p className="home-subtitle">Choose how you want to practice</p>
       <div className="mode-cards">

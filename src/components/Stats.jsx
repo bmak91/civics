@@ -2,7 +2,7 @@ import { useState } from "react";
 import RadarChart from "./RadarChart";
 import TestStats from "./TestStats";
 
-export default function Stats({ categories, sessions, onReset }) {
+export default function Stats({ categories, sessions, categoryOf, onReset }) {
   const [activeTab, setActiveTab] = useState("categories");
 
   return (
@@ -32,7 +32,7 @@ export default function Stats({ categories, sessions, onReset }) {
       {activeTab === "categories" ? (
         <RadarChart categories={categories} />
       ) : (
-        <TestStats sessions={sessions} />
+        <TestStats sessions={sessions} categoryOf={categoryOf} />
       )}
     </div>
   );
