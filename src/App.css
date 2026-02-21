@@ -296,6 +296,28 @@ h1 {
   height: auto;
 }
 
+.radar-legend-inline {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #718096;
+}
+
+.radar-legend-swatch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.radar-swatch-box {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
 .radar-tooltip-area {
   min-height: 1.8rem;
   text-align: center;

@@ -52,6 +52,15 @@ export default function RadarChart({ categories }) {
     <line key={i} x1={CENTER} y1={CENTER} x2={x} y2={y} stroke="#e2e8f0" strokeWidth="0.8" />
   ));
 
+  // Coverage polygon (total questions per category, normalized to max)
+  const maxTotal = Math.max(...categories.map((c) => c.total), 1);
+  const coveragePoints = categories.map((cat, i) => {
+    const r = RADIUS * (cat.total / maxTotal);
+    return polarToXY(i * angleStep, r);
+  });
+  const coveragePolygonStr = coveragePoints.map((p) => p.join(",")).join(" ");
+
+  // Accuracy polygon (% correct)
   const dataPoints = categories.map((cat, i) => {
     const r = RADIUS * (cat.pct / 100);
     return polarToXY(i * angleStep, r);
@@ -124,6 +133,13 @@ export default function RadarChart({ categories }) {
           {gridPolygons}
           {axisLines}
           <polygon
+            points={coveragePolygonStr}
+            fill="rgba(160,174,192,0.2)"
+            stroke="#a0aec0"
+            strokeWidth="1"
+            strokeDasharray="3 2"
+          />
+          <polygon
             points={dataPolygonStr}
             fill="rgba(49,130,206,0.25)"
             stroke="#3182ce"
@@ -135,6 +151,10 @@ export default function RadarChart({ categories }) {
           {labels}
           {hitAreas}
         </svg>
+      </div>
+      <div className="radar-legend-inline">
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(49,130,206,0.25)", border: "1.5px solid #3182ce" }} /> Accuracy</span>
+        <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
       </div>
       <div className="radar-tooltip-area">
         {hoveredCat ? (
