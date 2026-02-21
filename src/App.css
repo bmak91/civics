@@ -272,17 +272,24 @@ h1 {
 
 /* Radar Chart */
 .radar-chart-section {
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   background: #fff;
   border-radius: 12px;
   padding: 1.25rem 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.radar-chart-section h3 {
+.radar-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.radar-chart-header h3 {
   font-size: 1rem;
   color: #2d3748;
-  margin-bottom: 0.75rem;
+  margin: 0;
 }
 
 .radar-chart-wrap {
@@ -350,13 +357,12 @@ h1 {
 }
 
 .reset-stats-btn {
-  margin-top: 2rem;
-  padding: 0.5rem 1.2rem;
+  padding: 0.3rem 0.75rem;
   background: none;
   color: #a0aec0;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   cursor: pointer;
   transition: color 0.15s, border-color 0.15s;
 }

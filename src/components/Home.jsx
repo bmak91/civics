@@ -56,6 +56,8 @@ export default function Home({ onSelectMode }) {
 
   return (
     <div className="home">
+      <RadarChart categories={radarCategories} onReset={hasStats ? handleReset : null} />
+
       <p className="home-subtitle">Choose how you want to practice</p>
       <div className="mode-cards">
         <button className="mode-card" onClick={() => onSelectMode("study")}>
@@ -69,14 +71,6 @@ export default function Home({ onSelectMode }) {
           <p>Answer 40 random questions and get a score at the end. Questions rotate so you see them all over time.</p>
         </button>
       </div>
-
-      <RadarChart categories={radarCategories} />
-
-      {hasStats && (
-        <button className="reset-stats-btn" onClick={handleReset}>
-          Reset Stats
-        </button>
-      )}
     </div>
   );
 }

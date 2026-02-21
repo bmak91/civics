@@ -34,7 +34,7 @@ function wrapText(text, maxChars) {
   return lines;
 }
 
-export default function RadarChart({ categories }) {
+export default function RadarChart({ categories, onReset }) {
   const [hovered, setHovered] = useState(null);
   const n = categories.length;
   const angleStep = 360 / n;
@@ -127,7 +127,14 @@ export default function RadarChart({ categories }) {
 
   return (
     <div className="radar-chart-section">
-      <h3>Stats by Category</h3>
+      <div className="radar-chart-header">
+        <h3>Stats by Category</h3>
+        {onReset && (
+          <button className="reset-stats-btn" onClick={onReset}>
+            Reset
+          </button>
+        )}
+      </div>
       <div className="radar-chart-wrap">
         <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="radar-chart-svg" overflow="visible">
           {gridPolygons}
