@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
+
+function shuffleChoices(choices, correctIndex) {
+  const indexed = choices.map((text, i) => ({ text, isCorrect: i === correctIndex }));
+  for (let i = indexed.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indexed[i], indexed[j]] = [indexed[j], indexed[i]];
+  }
+  return indexed;
+}
 
 export default function Flashcard({ question, onNext, onHome, current, total, mode, score }) {
+  const shuffled = useMemo(
+    () => shuffleChoices(question.choices, question.correctIndex),
+    [question]
+  );
   const [selected, setSelected] = useState(null);
 
   const isAnswered = selected !== null;
-  const isCorrect = selected === question.correctIndex;
+  const isCorrect = isAnswered && shuffled[selected].isCorrect;
 
   function handleSelect(index) {
     if (isAnswered) return;
@@ -28,13 +41,11 @@ export default function Flashcard({ question, onNext, onHome, current, total, mo
       <h2 className="question">{question.question}</h2>
 
       <div className="choices">
-        {question.choices.map((choice, index) => {
+        {shuffled.map((choice, index) => {
           let className = "choice";
           if (isAnswered) {
-            if (index === question.correctIndex) className += " correct";
+            if (choice.isCorrect) className += " correct";
             else if (index === selected) className += " wrong";
-          } else if (index === selected) {
-            className += " selected";
           }
 
           return (
@@ -47,7 +58,7 @@ export default function Flashcard({ question, onNext, onHome, current, total, mo
               <span className="choice-letter">
                 {String.fromCharCode(65 + index)}
               </span>
-              {choice}
+              {choice.text}
             </button>
           );
         })}
