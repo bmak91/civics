@@ -45,6 +45,7 @@ export default function RadarChart({ categories, sessions, onReset }) {
   const angleStep = 360 / n;
 
   const vertices = categories.map((_, i) => polarToXY(i * angleStep, RADIUS));
+  const fullPolygonStr = vertices.map((p) => p.join(",")).join(" ");
 
   const gridPolygons = GRID_LEVELS.map((level) => {
     const points = categories
@@ -170,6 +171,19 @@ export default function RadarChart({ categories, sessions, onReset }) {
         <>
           <div className="radar-chart-wrap">
             <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="radar-chart-svg" overflow="visible">
+              <defs>
+                <linearGradient id="tricolore" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stopColor="#000091" />
+                  <stop offset="33%" stopColor="#000091" />
+                  <stop offset="33%" stopColor="#ffffff" />
+                  <stop offset="66%" stopColor="#ffffff" />
+                  <stop offset="66%" stopColor="#e0010e" />
+                  <stop offset="100%" stopColor="#e0010e" />
+                </linearGradient>
+                <clipPath id="mastery-clip">
+                  <polygon points={dataPolygonStr} />
+                </clipPath>
+              </defs>
               {gridPolygons}
               {axisLines}
               <polygon
@@ -180,20 +194,25 @@ export default function RadarChart({ categories, sessions, onReset }) {
                 strokeDasharray="3 2"
               />
               <polygon
+                points={fullPolygonStr}
+                fill="url(#tricolore)"
+                clipPath="url(#mastery-clip)"
+              />
+              <polygon
                 points={dataPolygonStr}
-                fill="rgba(49,130,206,0.25)"
-                stroke="#3182ce"
-                strokeWidth="1.5"
+                fill="none"
+                stroke="#000091"
+                strokeWidth="1.2"
               />
               {dataPoints.map(([x, y], i) => (
-                <circle key={i} cx={x} cy={y} r="2.5" fill="#3182ce" />
+                <circle key={i} cx={x} cy={y} r="2.5" fill="#000091" />
               ))}
               {labels}
               {hitAreas}
             </svg>
           </div>
           <div className="radar-legend-inline">
-            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(49,130,206,0.25)", border: "1.5px solid #3182ce" }} /> Mastery</span>
+            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "#fff", border: "1.5px solid #000091" }} /> Mastery</span>
             <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
           </div>
           <div className="radar-tooltip-area">
