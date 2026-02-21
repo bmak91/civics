@@ -1,0 +1,271 @@
+.app {
+  max-width: 640px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  color: #1a365d;
+}
+
+/* Flashcard */
+.flashcard {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.flashcard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress {
+  font-size: 0.85rem;
+  color: #718096;
+}
+
+.live-score {
+  color: #3182ce;
+  font-weight: 600;
+}
+
+.home-btn {
+  padding: 0.35rem 0.9rem;
+  background: #e2e8f0;
+  color: #4a5568;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.home-btn:hover {
+  background: #cbd5e0;
+}
+
+.question {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #2d3748;
+}
+
+/* Choices */
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.choice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  color: #2d3748;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+
+.choice:hover:not(:disabled) {
+  border-color: #90cdf4;
+  background: #ebf8ff;
+}
+
+.choice:disabled {
+  cursor: default;
+}
+
+.choice.correct {
+  border-color: #48bb78;
+  background: #f0fff4;
+}
+
+.choice.wrong {
+  border-color: #fc8181;
+  background: #fff5f5;
+}
+
+.choice-letter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #edf2f7;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #4a5568;
+  flex-shrink: 0;
+}
+
+.choice.correct .choice-letter {
+  background: #c6f6d5;
+  color: #276749;
+}
+
+.choice.wrong .choice-letter {
+  background: #fed7d7;
+  color: #9b2c2c;
+}
+
+/* Explanation */
+.explanation {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.explanation.correct {
+  background: #f0fff4;
+  border-left: 4px solid #48bb78;
+}
+
+.explanation.wrong {
+  background: #fff5f5;
+  border-left: 4px solid #fc8181;
+}
+
+.result-label {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.explanation.correct .result-label {
+  color: #276749;
+}
+
+.explanation.wrong .result-label {
+  color: #9b2c2c;
+}
+
+.explanation p {
+  color: #4a5568;
+}
+
+/* Next button */
+.next-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.7rem 2rem;
+  background: #3182ce;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.next-btn:hover {
+  background: #2b6cb0;
+}
+
+/* Results */
+.results {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.results h2 {
+  font-size: 1.4rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3182ce;
+}
+
+.percentage {
+  font-size: 1.2rem;
+  color: #718096;
+  margin-bottom: 1rem;
+}
+
+.score-message {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.results-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.next-btn.secondary {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.next-btn.secondary:hover {
+  background: #cbd5e0;
+}
+
+/* Home */
+.home-subtitle {
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.mode-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mode-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.mode-card:hover {
+  border-color: #90cdf4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mode-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.mode-card h2 {
+  font-size: 1.15rem;
+  color: #2d3748;
+  margin-bottom: 0.4rem;
+}
+
+.mode-card p {
+  font-size: 0.9rem;
+  color: #718096;
+  line-height: 1.5;
+}
