@@ -7,9 +7,6 @@ import {
   VIVRE_EN_SOCIETE,
   CATEGORY_SLUGS,
 } from "../data/categories";
-import allQuestions from "../data/questions";
-
-const questions = allQuestions.filter((q) => q.choices.length > 0);
 
 const CATEGORY_ICONS = {
   [PRINCIPES_ET_VALEURS]: "\u2696\uFE0F",
@@ -23,20 +20,19 @@ const categoryOptions = Object.entries(CATEGORY_ICONS).map(([name, icon]) => ({
   name,
   icon,
   slug: CATEGORY_SLUGS[name],
-  firstId: questions.find((q) => q.category === name).id,
 }));
 
-export default function StudyPicker({ onSelect }) {
+export default function StudyPicker() {
   return (
     <div className="study-picker">
       <h2 className="study-picker-title">Choisissez une catégorie à réviser</h2>
       <div className="study-picker-list">
-        <Link to={`/study/all/${questions[0].id}`} className="study-picker-btn" onClick={onSelect}>
+        <Link to="/study/all" className="study-picker-btn">
           <span className="study-picker-icon">📖</span>
           Toutes les questions
         </Link>
-        {categoryOptions.map(({ name, icon, slug, firstId }) => (
-          <Link key={name} to={`/study/${slug}/${firstId}`} className="study-picker-btn" onClick={onSelect}>
+        {categoryOptions.map(({ name, icon, slug }) => (
+          <Link key={name} to={`/study/${slug}`} className="study-picker-btn">
             <span className="study-picker-icon">{icon}</span>
             {name}
           </Link>

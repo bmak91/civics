@@ -7,16 +7,55 @@ import Results from "./components/Results";
 import allQuestions from "./data/questions";
 import { SLUG_TO_CATEGORY } from "./data/categories";
 import pickTestQuestions from "./utils/pickTestQuestions";
-import { startTestSession, updateTestSession, completeTestSession, getTestSession } from "./utils/tracker";
+import { startTestSession, updateTestSession, completeTestSession, getTestSession, getAttempts } from "./utils/tracker";
 import "./App.css";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 const questionsById = Object.fromEntries(questions.map((q) => [q.id, q]));
 
-function getStudyQuestions(slug) {
+function filterBySlug(slug) {
   if (!slug || slug === "all") return questions;
   const category = SLUG_TO_CATEGORY[slug];
   return category ? questions.filter((q) => q.category === category) : questions;
+}
+
+function buildStudyOrder(slug) {
+  const base = filterBySlug(slug);
+  const attempts = getAttempts();
+  const withCount = base.map((q) => ({ q, count: (attempts[q.id] || []).length }));
+
+  // Group by attempt count
+  const groups = {};
+  for (const item of withCount) {
+    if (!groups[item.count]) groups[item.count] = [];
+    groups[item.count].push(item.q);
+  }
+
+  // Shuffle within each group, then concat in ascending count order
+  const result = [];
+  for (const count of Object.keys(groups).map(Number).sort((a, b) => a - b)) {
+    const group = groups[count];
+    for (let i = group.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [group[i], group[j]] = [group[j], group[i]];
+    }
+    result.push(...group);
+  }
+  return result;
+}
+
+// Cache the shuffled order so it persists across question navigations
+let studyOrderCache = { slug: null, qs: [] };
+
+function resetStudyOrder(slug) {
+  const qs = buildStudyOrder(slug);
+  studyOrderCache = { slug, qs };
+  return qs;
+}
+
+function getStudyQuestions(slug) {
+  if (studyOrderCache.slug === slug) return studyOrderCache.qs;
+  return resetStudyOrder(slug);
 }
 
 function resolveSessionQuestions(sessionId) {
@@ -41,9 +80,11 @@ export default function App() {
     navigate(`/test/${sessionId}/${qs[0].id}`, { replace: true });
   }
 
-  function handleStudyStart() {
+  function handleStudyStart(slug) {
     setScore(0);
     answeredCount.current = 0;
+    const qs = resetStudyOrder(slug);
+    navigate(`/study/${slug}/${qs[0].id}`, { replace: true });
   }
 
   function handleHome() {
@@ -62,7 +103,7 @@ export default function App() {
       currentSessionId.current = sessionId;
       navigate(`/test/${sessionId}/${qs[0].id}`);
     } else {
-      const qs = getStudyQuestions(slug);
+      const qs = resetStudyOrder(slug);
       navigate(`/study/${slug}/${qs[0].id}`);
     }
   }
@@ -106,7 +147,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
-        <Route path="/study" element={<StudyPicker onSelect={handleStudyStart} />} />
+        <Route path="/study" element={<StudyPicker />} />
+        <Route path="/study/:slug" element={<StartStudy onStart={handleStudyStart} />} />
         <Route
           path="/study/:slug/results"
           element={
@@ -266,5 +308,17 @@ function StartTest({ onStart }) {
       onStart();
     }
   }, [onStart]);
+  return null;
+}
+
+function StartStudy({ onStart }) {
+  const { slug } = useParams();
+  const started = useRef(false);
+  useEffect(() => {
+    if (!started.current) {
+      started.current = true;
+      onStart(slug);
+    }
+  }, [slug, onStart]);
   return null;
 }
