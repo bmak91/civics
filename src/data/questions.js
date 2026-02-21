@@ -1,7 +1,8 @@
 const questions = [
+
   // ===== Principes et valeurs de la République =====
   {
-    id: 1,
+    id: "6hT2DTW9TM",
     category: "Principes et valeurs de la République",
     question: "Complétez les paroles de la Marseillaise \"Allons enfants de la patrie...\"",
     choices: [],
@@ -9,7 +10,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 2,
+    id: "hlV2qd9HJK",
     category: "Principes et valeurs de la République",
     question: "Dans le cadre d'un entretien d'embauche, que peut-on demander au candidat ?",
     choices: [],
@@ -17,7 +18,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 3,
+    id: "f_xbEf9Syc",
     category: "Principes et valeurs de la République",
     question: "Déclarer ses revenus aux services fiscaux est :",
     choices: [],
@@ -25,7 +26,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 4,
+    id: "HkP6bPhEYi",
     category: "Principes et valeurs de la République",
     question: "En France, les impôts permettent de financer les dépenses publiques. Quelle proposition est correcte ?",
     choices: [],
@@ -33,7 +34,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 5,
+    id: "3iwE256B_g",
     category: "Principes et valeurs de la République",
     question: "La liberté d'association est :",
     choices: [],
@@ -41,7 +42,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 6,
+    id: "LmAeuUmxC3",
     category: "Principes et valeurs de la République",
     question: "La liberté d'expression sur les réseaux sociaux en France est :",
     choices: [],
@@ -49,7 +50,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 7,
+    id: "EsYWCNTeGc",
     category: "Principes et valeurs de la République",
     question: "Lequel de ces prénoms évoque un symbole de la République ?",
     choices: [],
@@ -57,7 +58,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 8,
+    id: "6jeKXNHNFU",
     category: "Principes et valeurs de la République",
     question: "Lequel de ces symboles représente la République française ?",
     choices: [],
@@ -65,7 +66,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 9,
+    id: "q0iYVQhB3-",
     category: "Principes et valeurs de la République",
     question: "Où peut-on voir la devise de la République ?",
     choices: [],
@@ -73,7 +74,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 10,
+    id: "IE2Z-S9lg5",
     category: "Principes et valeurs de la République",
     question: "Lesquels sont des symboles officiels de la République française ?",
     choices: [],
@@ -81,7 +82,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 11,
+    id: "jtLQr2vCIB",
     category: "Principes et valeurs de la République",
     question: "Peut-on brûler publiquement un drapeau français ?",
     choices: [],
@@ -89,7 +90,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 12,
+    id: "xuNCJqfxlL",
     category: "Principes et valeurs de la République",
     question: "Quand la sécurité sociale a-t-elle été établie en France ?",
     choices: [],
@@ -97,7 +98,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 13,
+    id: "OxTLaNE4kL",
     category: "Principes et valeurs de la République",
     question: "Que commémore la fête nationale ?",
     choices: [],
@@ -105,7 +106,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 14,
+    id: "lWWLmx6AST",
     category: "Principes et valeurs de la République",
     question: "Que porte Marianne sur la tête ?",
     choices: [],
@@ -113,7 +114,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 15,
+    id: "u8y6iQCtIG",
+    category: "Principes et valeurs de la République",
+    question: "Que signifie le mot \"fraternité\" dans la devise française ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "iB8bKpnsHQ",
     category: "Principes et valeurs de la République",
     question: "Quel symbole de la République peut-on voir sur les maillots de l'équipe de France de football ?",
     choices: [],
@@ -121,7 +130,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 16,
+    id: "t79GxfN4_r",
     category: "Principes et valeurs de la République",
     question: "Quelle est la devise de la République française ?",
     choices: [],
@@ -129,7 +138,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 17,
+    id: "LP4UcYjY9I",
     category: "Principes et valeurs de la République",
     question: "Qu'est-ce que la liberté d'association ?",
     choices: [],
@@ -137,7 +146,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 18,
+    id: "3FapwFhiC8",
     category: "Principes et valeurs de la République",
     question: "Qu'est-ce qu'une liberté ?",
     choices: [],
@@ -145,7 +154,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 19,
+    id: "4X7AcHmzZ-",
+    category: "Principes et valeurs de la République",
+    question: "Selon la Constitution, la France est une République...",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "OU1uDuuz6a",
     category: "Principes et valeurs de la République",
     question: "Sur quel document peut-on voir Marianne ?",
     choices: [],
@@ -153,7 +170,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 20,
+    id: "F8RUaRa20r",
     category: "Principes et valeurs de la République",
     question: "Une des valeurs de la devise républicaine est l'Égalité. Qu'est-ce que cela signifie ?",
     choices: [],
@@ -161,7 +178,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 21,
+    id: "CV4muadzw5",
     category: "Principes et valeurs de la République",
     question: "Une personne peut-elle changer librement de religion en France ?",
     choices: [],
@@ -169,7 +186,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 22,
+    id: "QHQXKuIYEd",
+    category: "Principes et valeurs de la République",
+    question: "Selon le principe de laïcité, que signifie la neutralité de l'État ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "pmps96LaJK",
     category: "Principes et valeurs de la République",
     question: "Que peut faire un usager du service public dans une mairie ?",
     choices: [],
@@ -177,7 +202,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 23,
+    id: "G_LsiICAqR",
     category: "Principes et valeurs de la République",
     question: "En France, il est possible pour l'État de financer :",
     choices: [],
@@ -185,7 +210,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 24,
+    id: "1YJ3I2HBL9",
     category: "Principes et valeurs de la République",
     question: "En quelle année la loi de séparation des Églises et de l'État a-t-elle été votée ?",
     choices: [],
@@ -193,7 +218,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 25,
+    id: "WL_RvpNj5N",
     category: "Principes et valeurs de la République",
     question: "Que dit la loi de 1905 ?",
     choices: [],
@@ -201,7 +226,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 26,
+    id: "1fbd6TsbeW",
     category: "Principes et valeurs de la République",
     question: "Que garantit le principe de laïcité ?",
     choices: [],
@@ -209,7 +234,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 27,
+    id: "vGkN1n3WBK",
     category: "Principes et valeurs de la République",
     question: "Quel jour célèbre-t-on officiellement la laïcité en France ?",
     choices: [],
@@ -217,7 +242,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 28,
+    id: "ZsCvhl8Bwm",
     category: "Principes et valeurs de la République",
     question: "Quel symbole religieux peut être porté dans une école publique dans le respect de la laïcité ?",
     choices: [],
@@ -225,7 +250,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 29,
+    id: "L7GVTSe2ej",
     category: "Principes et valeurs de la République",
     question: "Quel terme désigne précisément la haine ou les préjugés contre les Juifs ?",
     choices: [],
@@ -233,7 +258,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 30,
+    id: "xRjDvEicq8",
     category: "Principes et valeurs de la République",
     question: "Quel texte est considéré comme le texte fondateur de la laïcité ?",
     choices: [],
@@ -241,7 +266,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 31,
+    id: "aNEt_hWNiR",
     category: "Principes et valeurs de la République",
     question: "Quelle institution française doit rester neutre en matière de religion ?",
     choices: [],
@@ -249,7 +274,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 32,
+    id: "LSJaWdoC1-",
     category: "Principes et valeurs de la République",
     question: "Qu'est-ce que la laïcité ?",
     choices: [],
@@ -257,7 +282,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 33,
+    id: "uswchylcO2",
     category: "Principes et valeurs de la République",
     question: "À l'école, la charte de la laïcité permet de :",
     choices: [],
@@ -265,7 +290,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 34,
+    id: "DXe925RPwp",
     category: "Principes et valeurs de la République",
     question: "Qui doit respecter et veiller à la neutralité religieuse dans les services publics ?",
     choices: [],
@@ -273,7 +298,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 35,
+    id: "PIT33ry3Q6",
     category: "Principes et valeurs de la République",
     question: "Une personne déclare ne croire en aucun dieu. On peut dire :",
     choices: [],
@@ -283,7 +308,7 @@ const questions = [
 
   // ===== Système institutionnel et politique =====
   {
-    id: 36,
+    id: "55Pha38eC2",
     category: "Système institutionnel et politique",
     question: "Comment est désigné le Premier ministre ?",
     choices: [],
@@ -291,7 +316,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 37,
+    id: "AO9GOk29S8",
     category: "Système institutionnel et politique",
     question: "Qui peut se présenter aux élections présidentielles ?",
     choices: [],
@@ -299,7 +324,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 38,
+    id: "VzUn_VEyMp",
     category: "Système institutionnel et politique",
     question: "À qui appartient la souveraineté nationale ?",
     choices: [],
@@ -307,7 +332,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 39,
+    id: "D9dEibgpAE",
     category: "Système institutionnel et politique",
     question: "Qui est élu lors des élections municipales ?",
     choices: [],
@@ -315,7 +340,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 40,
+    id: "2cUXYhdU9f",
     category: "Système institutionnel et politique",
     question: "L'inscription sur les listes électorales est :",
     choices: [],
@@ -323,7 +348,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 41,
+    id: "QPYLpCwYdQ",
     category: "Système institutionnel et politique",
     question: "Quelle condition est nécessaire pour voter aux élections présidentielles ?",
     choices: [],
@@ -331,7 +356,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 42,
+    id: "-r-UUJSSK0",
     category: "Système institutionnel et politique",
     question: "Quelle condition faut-il remplir pour être candidat aux élections municipales ?",
     choices: [],
@@ -339,7 +364,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 43,
+    id: "Ak3Xetxd5y",
     category: "Système institutionnel et politique",
     question: "Parmi ces autorités, laquelle est élue ?",
     choices: [],
@@ -347,7 +372,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 44,
+    id: "0aSOrxCNm1",
     category: "Système institutionnel et politique",
     question: "Quelles sont les fonctions du maire ?",
     choices: [],
@@ -355,7 +380,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 45,
+    id: "q6CArQNNqS",
     category: "Système institutionnel et politique",
     question: "Une personne, n'ayant pas d'accès à internet, veut s'inscrire sur les listes électorales pour pouvoir voter aux prochaines élections politiques. Où peut-elle s'inscrire ?",
     choices: [],
@@ -363,7 +388,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 46,
+    id: "yBU1c1trzS",
     category: "Système institutionnel et politique",
     question: "À quel âge peut-on devenir électeur ?",
     choices: [],
@@ -371,7 +396,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 47,
+    id: "4mMjzSuOs_",
     category: "Système institutionnel et politique",
     question: "En France, est-ce obligatoire de voter ?",
     choices: [],
@@ -379,7 +404,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 48,
+    id: "qexa63W-vB",
     category: "Système institutionnel et politique",
     question: "A-t-on le droit de ne pas respecter une loi ?",
     choices: [],
@@ -387,7 +412,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 49,
+    id: "qzg9wB5KTv",
     category: "Système institutionnel et politique",
     question: "Comment sont désignés les députés ?",
     choices: [],
@@ -395,7 +420,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 50,
+    id: "pd9aih8luQ",
     category: "Système institutionnel et politique",
     question: "Qui vote les lois ?",
     choices: [],
@@ -403,7 +428,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 51,
+    id: "RaKEHKipKM",
     category: "Système institutionnel et politique",
     question: "La séparation des pouvoirs est un principe fondamental. Quels sont les trois pouvoirs concernés ?",
     choices: [],
@@ -411,7 +436,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 52,
+    id: "hY3wvzTa-H",
     category: "Système institutionnel et politique",
     question: "Qu'est-ce que l'État de droit ?",
     choices: [],
@@ -419,7 +444,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 53,
+    id: "EMjT-AQO93",
     category: "Système institutionnel et politique",
     question: "Quelles sont les durées du mandat du conseil municipal et du maire ?",
     choices: [],
@@ -427,7 +452,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 54,
+    id: "TPDfgVZePN",
     category: "Système institutionnel et politique",
     question: "Qui est élu lors des élections législatives ?",
     choices: [],
@@ -435,7 +460,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 55,
+    id: "erooSEJ4hL",
     category: "Système institutionnel et politique",
     question: "Quelle est la durée du mandat du Président de la République française ?",
     choices: [],
@@ -443,7 +468,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 56,
+    id: "OEpGgBvi66",
     category: "Système institutionnel et politique",
     question: "Quelle est la durée du mandat des députés ?",
     choices: [],
@@ -451,7 +476,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 57,
+    id: "8-fzGZnQYY",
     category: "Système institutionnel et politique",
     question: "Quelle est la durée du mandat des sénateurs ?",
     choices: [],
@@ -459,7 +484,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 58,
+    id: "W7masNp-NL",
     category: "Système institutionnel et politique",
     question: "Qui dirige l'action du gouvernement ?",
     choices: [],
@@ -467,7 +492,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 59,
+    id: "wUk-EC-rrA",
     category: "Système institutionnel et politique",
     question: "En France, est-ce possible d'adhérer à un parti politique ?",
     choices: [],
@@ -475,7 +500,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 60,
+    id: "fZxJRUAoBb",
     category: "Système institutionnel et politique",
     question: "Qui sanctionne l'auteur d'un vol ?",
     choices: [],
@@ -483,7 +508,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 61,
+    id: "5LPcAkkmrm",
     category: "Système institutionnel et politique",
     question: "Qui gère les collèges publics ?",
     choices: [],
@@ -491,7 +516,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 62,
+    id: "meukrffLsW",
     category: "Système institutionnel et politique",
     question: "Qui gère les écoles primaires et maternelles publiques ?",
     choices: [],
@@ -499,7 +524,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 63,
+    id: "mdiqgtnyFh",
     category: "Système institutionnel et politique",
     question: "Comment sont désignés les maires ?",
     choices: [],
@@ -507,7 +532,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 64,
+    id: "0b4yr3eG21",
     category: "Système institutionnel et politique",
     question: "Quelle collectivité territoriale est responsable des transports régionaux ?",
     choices: [],
@@ -515,7 +540,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 65,
+    id: "w9tG3R3PwX",
     category: "Système institutionnel et politique",
     question: "Quelle est l'une des voies possibles pour modifier la Constitution ?",
     choices: [],
@@ -523,7 +548,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 66,
+    id: "_vs4X6LKro",
     category: "Système institutionnel et politique",
     question: "Qui assure l'intérim du président de la République en cas de décès ?",
     choices: [],
@@ -531,7 +556,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 67,
+    id: "df3QoN-MrI",
     category: "Système institutionnel et politique",
     question: "Quel est le rôle du Conseil constitutionnel ?",
     choices: [],
@@ -539,7 +564,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 68,
+    id: "5ssiqN9Khm",
     category: "Système institutionnel et politique",
     question: "Quelle condition est obligatoire pour se présenter à l'élection présidentielle ?",
     choices: [],
@@ -547,7 +572,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 69,
+    id: "6uY_k-g3S7",
     category: "Système institutionnel et politique",
     question: "Combien y a-t-il de départements en France ?",
     choices: [],
@@ -555,7 +580,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 70,
+    id: "Ecso6yN3TC",
     category: "Système institutionnel et politique",
     question: "Comment est organisé le découpage administratif de la France ?",
     choices: [],
@@ -563,7 +588,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 71,
+    id: "yqYlT4FMNb",
     category: "Système institutionnel et politique",
     question: "Qui représente l'État dans un département ?",
     choices: [],
@@ -571,7 +596,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 72,
+    id: "N561-ymw-5",
     category: "Système institutionnel et politique",
     question: "Quel est le rôle du Président de la République ?",
     choices: [],
@@ -579,7 +604,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 73,
+    id: "CnuuNHW-eP",
     category: "Système institutionnel et politique",
     question: "Quel est le rôle du Premier ministre ?",
     choices: [],
@@ -587,7 +612,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 74,
+    id: "YwjW0lz9C5",
     category: "Système institutionnel et politique",
     question: "Quel est le rôle du Défenseur des droits ?",
     choices: [],
@@ -595,7 +620,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 75,
+    id: "Kek_QS90Pz",
     category: "Système institutionnel et politique",
     question: "En quelle année la citoyenneté européenne a-t-elle été créée ?",
     choices: [],
@@ -603,7 +628,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 76,
+    id: "IOQORogO6l",
+    category: "Système institutionnel et politique",
+    question: "Quel est le dernier État à avoir intégré l'Union Européenne en 2013 ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "SBVvqWt0eq",
     category: "Système institutionnel et politique",
     question: "Qui a composé l'hymne de l'Union européenne ?",
     choices: [],
@@ -611,7 +644,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 77,
+    id: "xGXkR1nDNg",
     category: "Système institutionnel et politique",
     question: "Quand est célébrée la journée de l'Europe ?",
     choices: [],
@@ -619,7 +652,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 78,
+    id: "8kS1VALudS",
     category: "Système institutionnel et politique",
     question: "Où est le siège de la Banque centrale européenne ?",
     choices: [],
@@ -627,7 +660,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 79,
+    id: "RQLx1oM3o9",
     category: "Système institutionnel et politique",
     question: "Où est le siège de la Commission européenne ?",
     choices: [],
@@ -635,7 +668,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 80,
+    id: "K7WMkhrdXg",
     category: "Système institutionnel et politique",
     question: "Qui siège au Parlement européen ?",
     choices: [],
@@ -643,7 +676,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 81,
+    id: "nxLXp9UR7R",
+    category: "Système institutionnel et politique",
+    question: "Les citoyens de l'Union européenne peuvent-ils voter aux élections locales dans un autre État de l'Union ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "jA2YbZKTEj",
     category: "Système institutionnel et politique",
     question: "Combien d'États font partie de l'Union européenne au 1er janvier 2025 ?",
     choices: [],
@@ -651,7 +692,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 82,
+    id: "KNK1iyu2VT",
     category: "Système institutionnel et politique",
     question: "En quelle année le traité de Maastricht, qui marque la fondation de l'Union européenne, a-t-il été signé ?",
     choices: [],
@@ -659,7 +700,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 83,
+    id: "8ZpvEOCTmq",
     category: "Système institutionnel et politique",
     question: "Quel traité concerne la construction de l'Union européenne ?",
     choices: [],
@@ -667,7 +708,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 84,
+    id: "j-mtr_Huli",
     category: "Système institutionnel et politique",
     question: "Quel État a quitté l'Union Européenne en 2020 ?",
     choices: [],
@@ -675,7 +716,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 85,
+    id: "8DnRmy2HJR",
+    category: "Système institutionnel et politique",
+    question: "Quelle est la devise de l'Union européenne ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "EW0OQYk8ms",
     category: "Système institutionnel et politique",
     question: "Quel est l'hymne de l'Union Européenne ?",
     choices: [],
@@ -683,7 +732,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 86,
+    id: "ExeIexggUO",
     category: "Système institutionnel et politique",
     question: "De quoi est composé le drapeau européen ?",
     choices: [],
@@ -691,7 +740,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 87,
+    id: "Q7ZWH7FGy5",
     category: "Système institutionnel et politique",
     question: "Qui élit les députés européens ?",
     choices: [],
@@ -699,7 +748,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 88,
+    id: "yo_9L6h3wW",
     category: "Système institutionnel et politique",
     question: "Où est le siège du Parlement européen ?",
     choices: [],
@@ -709,7 +758,7 @@ const questions = [
 
   // ===== Droits et devoirs =====
   {
-    id: 89,
+    id: "9zxLY2HYss",
     category: "Droits et devoirs",
     question: "À quoi sert le droit de grève ?",
     choices: [],
@@ -717,7 +766,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 90,
+    id: "whThv0NAH4",
     category: "Droits et devoirs",
     question: "Au nom de quoi l'État justifie-t-il la restriction des droits ?",
     choices: [],
@@ -725,7 +774,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 91,
+    id: "Yy_HmFOTg7",
     category: "Droits et devoirs",
     question: "Laquelle de ces citations est inscrite dans la Déclaration des Droits de l'Homme et du Citoyen de 1789 ?",
     choices: [],
@@ -733,7 +782,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 92,
+    id: "Mw89mTt2NZ",
     category: "Droits et devoirs",
     question: "L'article 4 de la Déclaration des droits de l'homme et du citoyen affirme que \"la liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui\". Qu'est-ce que cela signifie ?",
     choices: [],
@@ -741,7 +790,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 93,
+    id: "gHTKPAp35-",
     category: "Droits et devoirs",
     question: "Que dit l'article 1er de la Constitution française ?",
     choices: [],
@@ -749,7 +798,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 94,
+    id: "_e8Z4JxYnG",
     category: "Droits et devoirs",
     question: "Que garantit la liberté de la presse ?",
     choices: [],
@@ -757,7 +806,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 95,
+    id: "v6EnT6tYl_",
     category: "Droits et devoirs",
     question: "Que permet la liberté de circulation ?",
     choices: [],
@@ -765,7 +814,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 96,
+    id: "IEmrCkLJTx",
     category: "Droits et devoirs",
     question: "Que signifie être citoyen d'un État ?",
     choices: [],
@@ -773,7 +822,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 97,
+    id: "yHUEYlgxJ2",
     category: "Droits et devoirs",
     question: "Que sont les droits fondamentaux ?",
     choices: [],
@@ -781,7 +830,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 98,
+    id: "_oWYcOfGOS",
     category: "Droits et devoirs",
     question: "Quel droit protège une personne contre une arrestation arbitraire ?",
     choices: [],
@@ -789,7 +838,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 99,
+    id: "fCMargk2xL",
     category: "Droits et devoirs",
     question: "Quel est le texte fondateur établissant les droits et les devoirs de chaque citoyen ?",
     choices: [],
@@ -797,7 +846,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 100,
+    id: "lSsBCD64c4",
     category: "Droits et devoirs",
     question: "Quel texte affirme que tous les hommes naissent libres et égaux en droits ?",
     choices: [],
@@ -805,7 +854,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 101,
+    id: "TM-7NQy0Bf",
     category: "Droits et devoirs",
     question: "Quelle situation est une atteinte à la dignité humaine ?",
     choices: [],
@@ -813,7 +862,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 102,
+    id: "NwLF08P7Yn",
     category: "Droits et devoirs",
     question: "Qu'est-ce que la liberté d'expression ?",
     choices: [],
@@ -821,7 +870,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 103,
+    id: "pllrZWZtqI",
     category: "Droits et devoirs",
     question: "Suite à une interpellation par la police, il est possible de :",
     choices: [],
@@ -829,7 +878,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 104,
+    id: "onqL8RY5Dv",
     category: "Droits et devoirs",
     question: "Tous les citoyens français ont-ils une religion ?",
     choices: [],
@@ -837,7 +886,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 105,
+    id: "9Yhc9bPkNv",
     category: "Droits et devoirs",
     question: "À quel âge est la majorité numérique en France ?",
     choices: [],
@@ -845,7 +894,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 106,
+    id: "o7sEwzHmut",
     category: "Droits et devoirs",
     question: "Dans lequel de ces endroits est-on autorisé à fumer ?",
     choices: [],
@@ -853,7 +902,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 107,
+    id: "hqihF_eESj",
     category: "Droits et devoirs",
     question: "En France, la conduite sans permis d'une moto est :",
     choices: [],
@@ -861,7 +910,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 108,
+    id: "l9A73M0FTM",
     category: "Droits et devoirs",
     question: "En quoi consiste le devoir de solidarité ?",
     choices: [],
@@ -869,7 +918,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 109,
+    id: "iqvhqeJ-M6",
     category: "Droits et devoirs",
     question: "Est-ce légal d'être marié à plusieurs personnes en même temps ?",
     choices: [],
@@ -877,7 +926,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 110,
+    id: "KN8YUnEYUi",
     category: "Droits et devoirs",
     question: "Est-ce obligatoire de déclarer ses impôts chaque année en France ?",
     choices: [],
@@ -885,7 +934,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 111,
+    id: "Id7g5bO9mr",
     category: "Droits et devoirs",
     question: "Est-il obligatoire de porter secours à une personne en danger ?",
     choices: [],
@@ -893,7 +942,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 112,
+    id: "QkmmloWzdB",
     category: "Droits et devoirs",
     question: "Être juré d'assises est :",
     choices: [],
@@ -901,7 +950,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 113,
+    id: "yBH40jndr5",
     category: "Droits et devoirs",
     question: "La vente d'alcool en France est interdite aux personnes de moins de :",
     choices: [],
@@ -909,7 +958,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 114,
+    id: "ibVx_7TcVB",
     category: "Droits et devoirs",
     question: "Le non-respect du code de la route est :",
     choices: [],
@@ -917,7 +966,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 115,
+    id: "DoD3Y2kYo4",
     category: "Droits et devoirs",
     question: "Lequel de ces crimes ou délits peut entrainer la privation des droits civils et politiques par un juge ?",
     choices: [],
@@ -925,7 +974,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 116,
+    id: "JNJyk49sUq",
     category: "Droits et devoirs",
     question: "Pour obtenir une carte d'identité, il faut :",
     choices: [],
@@ -933,7 +982,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 117,
+    id: "m9_ikvQ5le",
     category: "Droits et devoirs",
     question: "Pour quel motif peut-on limiter la liberté d'expression ?",
     choices: [],
@@ -941,7 +990,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 118,
+    id: "W_AEFjZh5n",
     category: "Droits et devoirs",
     question: "Que doit faire un citoyen s'il est appelé à être juré dans un procès d'assises ?",
     choices: [],
@@ -949,7 +998,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 119,
+    id: "9NWod_IP9p",
     category: "Droits et devoirs",
     question: "Quel est l'âge de la majorité civile en France ?",
     choices: [],
@@ -957,7 +1006,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 120,
+    id: "_Rxv3wSiFe",
     category: "Droits et devoirs",
     question: "Quel est l'un des devoirs principaux d'un citoyen français ?",
     choices: [],
@@ -965,7 +1014,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 121,
+    id: "eLoXZpGq3-",
     category: "Droits et devoirs",
     question: "Quelle est l'infraction la plus grave ?",
     choices: [],
@@ -973,7 +1022,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 122,
+    id: "emgerm7tAj",
     category: "Droits et devoirs",
     question: "Qu'est-ce que la citoyenneté numérique ?",
     choices: [],
@@ -981,7 +1030,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 123,
+    id: "UvCFVPtloL",
     category: "Droits et devoirs",
     question: "Qu'est-ce que le devoir de mémoire ?",
     choices: [],
@@ -989,7 +1038,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 124,
+    id: "QvNDoQH63R",
+    category: "Droits et devoirs",
+    question: "Qui peut être appelé à faire partie d'un jury d'assises en France ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "h3GXzjAYUD",
     category: "Droits et devoirs",
     question: "Une personne est privée de ses droits civils et politiques pendant 5 ans suite à une condamnation. Parmi ces propositions laquelle est correcte ? Pendant 5 ans,...",
     choices: [],
@@ -999,7 +1056,7 @@ const questions = [
 
   // ===== Histoire, géographie et culture =====
   {
-    id: 125,
+    id: "DLn_blIQMt",
     category: "Histoire, géographie et culture",
     question: "Parmi ces textes, lequel a été adopté sous Napoléon Ier ?",
     choices: [],
@@ -1007,7 +1064,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 126,
+    id: "jwKHe4CvfM",
     category: "Histoire, géographie et culture",
     question: "Qui a été président de la Ve République ?",
     choices: [],
@@ -1015,7 +1072,23 @@ const questions = [
     explanation: "",
   },
   {
-    id: 127,
+    id: "uadL30FqWi",
+    category: "Histoire, géographie et culture",
+    question: "Quel est l'objectif des lois scolaires de la IIIe République ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "XD__BCgfhx",
+    category: "Histoire, géographie et culture",
+    question: "Pourquoi l'année 1958 est importante pour la France ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "cu_KfOCYtj",
     category: "Histoire, géographie et culture",
     question: "Que signifie la date du 14 juillet pour les Français ?",
     choices: [],
@@ -1023,7 +1096,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 128,
+    id: "2Ee1VxvYS5",
     category: "Histoire, géographie et culture",
     question: "Lequel de ces pays est un pays fondateur de l'Union Européenne ?",
     choices: [],
@@ -1031,7 +1104,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 129,
+    id: "5VtDnOqZT9",
+    category: "Histoire, géographie et culture",
+    question: "Simone Veil est une figure importante de l'histoire française. Elle a notamment :",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "JCsyt3ROFv",
     category: "Histoire, géographie et culture",
     question: "Dans quelle région est située une partie des plages du débarquement ayant permis d'engager la libération de la France ?",
     choices: [],
@@ -1039,7 +1120,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 130,
+    id: "ZkkBoDulFR",
     category: "Histoire, géographie et culture",
     question: "Dans quelle ville les rois de France étaient-ils couronnés ?",
     choices: [],
@@ -1047,7 +1128,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 131,
+    id: "N6kwa2PGq7",
     category: "Histoire, géographie et culture",
     question: "Quel roi de France a été guillotiné pendant la Révolution française ?",
     choices: [],
@@ -1055,7 +1136,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 132,
+    id: "G6so1DCX8m",
     category: "Histoire, géographie et culture",
     question: "En quelle année a débuté la Révolution française ?",
     choices: [],
@@ -1063,7 +1144,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 133,
+    id: "2PtE6XChaH",
     category: "Histoire, géographie et culture",
     question: "En quelle année Napoléon Ier est-il devenu empereur ?",
     choices: [],
@@ -1071,7 +1152,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 134,
+    id: "bakaH1BDfU",
     category: "Histoire, géographie et culture",
     question: "Lequel de ces personnages a un lien avec la République française ?",
     choices: [],
@@ -1079,7 +1160,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 135,
+    id: "60JmAPfXFE",
     category: "Histoire, géographie et culture",
     question: "De quand date l'appel à la résistance du général de Gaulle ?",
     choices: [],
@@ -1087,7 +1168,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 136,
+    id: "nNTHJQGieQ",
     category: "Histoire, géographie et culture",
     question: "Qu'est-ce que la Shoah ?",
     choices: [],
@@ -1095,7 +1176,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 137,
+    id: "2kJ-yM5uac",
     category: "Histoire, géographie et culture",
     question: "Quel pays a été une colonie française ?",
     choices: [],
@@ -1103,7 +1184,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 138,
+    id: "B5V1lOMtIF",
+    category: "Histoire, géographie et culture",
+    question: "Qui a rendu l'école gratuite, laïque et obligatoire ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "ky3pXZxukC",
     category: "Histoire, géographie et culture",
     question: "Depuis quand les Français élisent-ils le président de la République au suffrage universel direct ?",
     choices: [],
@@ -1111,7 +1200,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 139,
+    id: "ctcge3Oc26",
     category: "Histoire, géographie et culture",
     question: "En quelle année l'Union européenne a-t-elle été fondée ?",
     choices: [],
@@ -1119,7 +1208,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 140,
+    id: "Ywn5rfuRgW",
     category: "Histoire, géographie et culture",
     question: "Quand a eu lieu la Seconde guerre mondiale ?",
     choices: [],
@@ -1127,7 +1216,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 141,
+    id: "TB6AcJdAi5",
     category: "Histoire, géographie et culture",
     question: "Quand a eu lieu la Première guerre mondiale ?",
     choices: [],
@@ -1135,7 +1224,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 142,
+    id: "eIZAE2tq-l",
     category: "Histoire, géographie et culture",
     question: "Sous quel président a été abolie la peine de mort en France ?",
     choices: [],
@@ -1143,7 +1232,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 143,
+    id: "ifUXnJn0V9",
     category: "Histoire, géographie et culture",
     question: "Que célèbre-t-on le 8 mai ?",
     choices: [],
@@ -1151,7 +1240,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 144,
+    id: "J4HbyG6lrp",
     category: "Histoire, géographie et culture",
     question: "Quelle est la première étape de la construction européenne en 1951 ?",
     choices: [],
@@ -1159,7 +1248,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 145,
+    id: "SKq9VuU90_",
     category: "Histoire, géographie et culture",
     question: "Qui était une figure de la Résistance française pendant la Seconde Guerre mondiale ?",
     choices: [],
@@ -1167,7 +1256,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 146,
+    id: "Qiq32QCkY8",
     category: "Histoire, géographie et culture",
     question: "Le 11 novembre est un jour férié. À quoi correspond cette date ?",
     choices: [],
@@ -1175,7 +1264,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 147,
+    id: "mtPGwsWqf7",
     category: "Histoire, géographie et culture",
     question: "Depuis quand l'esclavage a-t-il été aboli en France ?",
     choices: [],
@@ -1183,7 +1272,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 148,
+    id: "Jwe6Vdt_cS",
     category: "Histoire, géographie et culture",
     question: "Qui a aboli l'esclavage en France ?",
     choices: [],
@@ -1191,7 +1280,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 149,
+    id: "CmZ03Tv4YM",
     category: "Histoire, géographie et culture",
     question: "Depuis quelle année l'école publique est-elle gratuite ?",
     choices: [],
@@ -1199,7 +1288,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 150,
+    id: "guqhZ8CVlw",
     category: "Histoire, géographie et culture",
     question: "En 1944, qu'est-ce qui a changé pour les femmes ?",
     choices: [],
@@ -1207,7 +1296,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 151,
+    id: "NI6sRSUIp1",
     category: "Histoire, géographie et culture",
     question: "Quelle organisation a été créée en 1945 après la Seconde Guerre mondiale ?",
     choices: [],
@@ -1215,7 +1304,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 152,
+    id: "ucU8_1C7XJ",
     category: "Histoire, géographie et culture",
     question: "En quelle année l'euro est-il devenu la monnaie officielle de la France ?",
     choices: [],
@@ -1223,7 +1312,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 153,
+    id: "H9ie2v1F09",
     category: "Histoire, géographie et culture",
     question: "Lors de la seconde guerre mondiale, à quelle date la ville de Paris a-t-elle été libérée ?",
     choices: [],
@@ -1231,7 +1320,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 154,
+    id: "E8N5mz-t5n",
     category: "Histoire, géographie et culture",
     question: "Quel était le principal port français impliqué dans la traite négrière au XVIIIe siècle ?",
     choices: [],
@@ -1239,7 +1328,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 155,
+    id: "RFjTD10x2G",
     category: "Histoire, géographie et culture",
     question: "Quel célèbre philosophe des Lumières a dénoncé l'esclavage ?",
     choices: [],
@@ -1247,7 +1336,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 156,
+    id: "-6t_1H0X1k",
+    category: "Histoire, géographie et culture",
+    question: "Quelle œuvre a été écrite par Victor Hugo ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "8-txwyqTJ4",
     category: "Histoire, géographie et culture",
     question: "Quel peintre est français ?",
     choices: [],
@@ -1255,7 +1352,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 157,
+    id: "2wn_5cZf58",
     category: "Histoire, géographie et culture",
     question: "Quel plat est une spécialité de la cuisine française ?",
     choices: [],
@@ -1263,7 +1360,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 158,
+    id: "SzwMYV3Rns",
     category: "Histoire, géographie et culture",
     question: "Qui était Marie Curie ?",
     choices: [],
@@ -1271,7 +1368,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 159,
+    id: "lMP3yHbZoo",
     category: "Histoire, géographie et culture",
     question: "Qui a peint \"La liberté guidant le peuple\" ?",
     choices: [],
@@ -1279,7 +1376,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 160,
+    id: "BQGGDPcoyt",
     category: "Histoire, géographie et culture",
     question: "Dans quel grand musée parisien est exposée la Joconde ?",
     choices: [],
@@ -1287,7 +1384,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 161,
+    id: "j9I9DIdpjT",
     category: "Histoire, géographie et culture",
     question: "Quel château célèbre se trouve près de Paris et symbolise le pouvoir royal de Louis XIV ?",
     choices: [],
@@ -1295,7 +1392,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 162,
+    id: "TmIPVdN7-1",
     category: "Histoire, géographie et culture",
     question: "Où peut-on voir des peintures préhistoriques en France ?",
     choices: [],
@@ -1303,7 +1400,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 163,
+    id: "rri0vWDcXd",
     category: "Histoire, géographie et culture",
     question: "Quel peintre célèbre a peint les Nymphéas ?",
     choices: [],
@@ -1311,7 +1408,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 164,
+    id: "1OTZRfZ570",
     category: "Histoire, géographie et culture",
     question: "Pendant quelles journées peut-on visiter gratuitement des lieux culturels en France ?",
     choices: [],
@@ -1319,7 +1416,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 165,
+    id: "qUp11T_n3c",
     category: "Histoire, géographie et culture",
     question: "Que symbolise le 1er mai ?",
     choices: [],
@@ -1327,7 +1424,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 166,
+    id: "9YMw_Hmczq",
     category: "Histoire, géographie et culture",
     question: "Qui était Monsieur Rouget de Lisle ?",
     choices: [],
@@ -1335,7 +1432,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 167,
+    id: "qn7GCczzHn",
     category: "Histoire, géographie et culture",
     question: "À quelle occasion a été construite la Tour Eiffel ?",
     choices: [],
@@ -1343,7 +1440,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 168,
+    id: "_IBb-iv1ye",
     category: "Histoire, géographie et culture",
     question: "Quelle chaîne de montagnes est située entre la France et l'Italie ?",
     choices: [],
@@ -1351,7 +1448,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 169,
+    id: "tWyIYNxTUd",
     category: "Histoire, géographie et culture",
     question: "Qui était Molière ?",
     choices: [],
@@ -1359,7 +1456,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 170,
+    id: "49W1V9cEQG",
     category: "Histoire, géographie et culture",
     question: "Qui était Charles Baudelaire ?",
     choices: [],
@@ -1367,7 +1464,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 171,
+    id: "q68wvwKI3Z",
     category: "Histoire, géographie et culture",
     question: "Qui était George Sand ?",
     choices: [],
@@ -1375,7 +1472,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 172,
+    id: "CQKrt0py7k",
     category: "Histoire, géographie et culture",
     question: "Qui était Simone de Beauvoir ?",
     choices: [],
@@ -1383,7 +1480,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 173,
+    id: "3W3O8w40cx",
     category: "Histoire, géographie et culture",
     question: "Qui était Albert Camus ?",
     choices: [],
@@ -1391,7 +1488,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 174,
+    id: "DgnskWd0oy",
     category: "Histoire, géographie et culture",
     question: "Qui était Marguerite Yourcenar ?",
     choices: [],
@@ -1399,7 +1496,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 175,
+    id: "bzzBwz7nsW",
     category: "Histoire, géographie et culture",
     question: "Qui était Paul Cézanne ?",
     choices: [],
@@ -1407,7 +1504,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 176,
+    id: "MWNMNpLnaC",
     category: "Histoire, géographie et culture",
     question: "Qui était Auguste Rodin ?",
     choices: [],
@@ -1415,7 +1512,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 177,
+    id: "9TciMXhnGc",
     category: "Histoire, géographie et culture",
     question: "Qui était un célèbre compositeur français ?",
     choices: [],
@@ -1423,7 +1520,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 178,
+    id: "mxUyZ1mNzi",
     category: "Histoire, géographie et culture",
     question: "Qui était Auguste Renoir ?",
     choices: [],
@@ -1431,7 +1528,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 179,
+    id: "4K39z_pRAt",
     category: "Histoire, géographie et culture",
     question: "Quel musée est situé à Paris ?",
     choices: [],
@@ -1439,7 +1536,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 180,
+    id: "hCtCm_LD2O",
     category: "Histoire, géographie et culture",
     question: "Quel monument historique se trouve sur une île en Normandie ?",
     choices: [],
@@ -1447,7 +1544,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 181,
+    id: "bGdaa8N5rD",
     category: "Histoire, géographie et culture",
     question: "Quelle ville française fait partie des 10 plus grandes métropoles du pays ?",
     choices: [],
@@ -1455,7 +1552,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 182,
+    id: "KCSz7dPEw6",
     category: "Histoire, géographie et culture",
     question: "Quelle île fait partie des Antilles françaises ?",
     choices: [],
@@ -1463,7 +1560,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 183,
+    id: "TYN9_sYZWQ",
     category: "Histoire, géographie et culture",
     question: "Quelle île est française ?",
     choices: [],
@@ -1471,7 +1568,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 184,
+    id: "olP4TAZ5Ot",
     category: "Histoire, géographie et culture",
     question: "Quelle est la plus haute montagne de France ?",
     choices: [],
@@ -1479,7 +1576,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 185,
+    id: "4JKCZWJ9Kg",
     category: "Histoire, géographie et culture",
     question: "Quelle île française est située dans l'océan indien ?",
     choices: [],
@@ -1487,7 +1584,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 186,
+    id: "xc2WMeozKc",
     category: "Histoire, géographie et culture",
     question: "Quel département français a une frontière avec le Brésil ?",
     choices: [],
@@ -1495,7 +1592,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 187,
+    id: "2rUN7FrLqc",
     category: "Histoire, géographie et culture",
     question: "De quelle ville française décolle la fusée Ariane ?",
     choices: [],
@@ -1503,7 +1600,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 188,
+    id: "uOfeuWACtm",
     category: "Histoire, géographie et culture",
     question: "Quelle mer ou océan borde la France métropolitaine ?",
     choices: [],
@@ -1511,7 +1608,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 189,
+    id: "xAhCSz3keb",
+    category: "Histoire, géographie et culture",
+    question: "Quelle mer se situe entre la France et l'Angleterre ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "WPU5a0-D3P",
     category: "Histoire, géographie et culture",
     question: "Quelle île est un département d'outre-mer français ?",
     choices: [],
@@ -1519,7 +1624,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 190,
+    id: "TGxslVo34a",
     category: "Histoire, géographie et culture",
     question: "Qu'est-ce que la France d'outre-mer ?",
     choices: [],
@@ -1527,7 +1632,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 191,
+    id: "Vvq0p39X32",
     category: "Histoire, géographie et culture",
     question: "Quelle est la population approximative de la France en 2025 ?",
     choices: [],
@@ -1535,7 +1640,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 192,
+    id: "V49VCS_EIR",
     category: "Histoire, géographie et culture",
     question: "Quel est le principal port maritime de France ?",
     choices: [],
@@ -1543,7 +1648,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 193,
+    id: "cDgFBu7ZRs",
     category: "Histoire, géographie et culture",
     question: "Combien y a-t-il de régions en France métropolitaine ?",
     choices: [],
@@ -1551,7 +1656,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 194,
+    id: "QFTWy4-79E",
+    category: "Histoire, géographie et culture",
+    question: "Quelle chaîne de montagnes est située entre la France et l'Espagne ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "-rZ44XWLgR",
     category: "Histoire, géographie et culture",
     question: "Quelle île française se trouve au sud-est du continent africain ?",
     choices: [],
@@ -1559,7 +1672,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 195,
+    id: "juuzTU8R8Z",
     category: "Histoire, géographie et culture",
     question: "Quel est le chef-lieu de la région Auvergne-Rhône-Alpes ?",
     choices: [],
@@ -1567,7 +1680,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 196,
+    id: "D3a2MDpX3c",
     category: "Histoire, géographie et culture",
     question: "Quel est le chef-lieu de la région Bretagne ?",
     choices: [],
@@ -1575,7 +1688,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 197,
+    id: "SMl4IddijR",
     category: "Histoire, géographie et culture",
     question: "Quel est le chef-lieu de la région Provence-Alpes-Côte d'Azur ?",
     choices: [],
@@ -1583,7 +1696,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 198,
+    id: "6jCrGm4Nwu",
     category: "Histoire, géographie et culture",
     question: "Quel est le 101ème département français depuis 2011 ?",
     choices: [],
@@ -1591,7 +1704,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 199,
+    id: "LeVyvg18UM",
     category: "Histoire, géographie et culture",
     question: "Quelle région française est réputée pour ses stations de ski ?",
     choices: [],
@@ -1599,7 +1712,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 200,
+    id: "VZ0eOcXTRi",
     category: "Histoire, géographie et culture",
     question: "Quel fleuve traverse Paris ?",
     choices: [],
@@ -1609,7 +1722,7 @@ const questions = [
 
   // ===== Vivre dans la société française =====
   {
-    id: 201,
+    id: "JJOhjwhQsO",
     category: "Vivre dans la société française",
     question: "Où faut-il déclarer la naissance d'un enfant ?",
     choices: [],
@@ -1617,7 +1730,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 202,
+    id: "CWxvExTbQi",
     category: "Vivre dans la société française",
     question: "Quelle action peut réaliser le locataire d'un logement sans l'autorisation du propriétaire ?",
     choices: [],
@@ -1625,7 +1738,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 203,
+    id: "WILYRNlOzE",
     category: "Vivre dans la société française",
     question: "Quel mariage est reconnu légalement ?",
     choices: [],
@@ -1633,7 +1746,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 204,
+    id: "CqEzN5V-A-",
     category: "Vivre dans la société française",
     question: "Le stationnement sur une place réservée aux personnes handicapées :",
     choices: [],
@@ -1641,7 +1754,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 205,
+    id: "OIYHTxMPzJ",
     category: "Vivre dans la société française",
     question: "Si une machine à laver est cassée, il est possible de :",
     choices: [],
@@ -1649,7 +1762,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 206,
+    id: "ACdXtWndyA",
     category: "Vivre dans la société française",
     question: "Dans quel cas faut-il déclarer son enfant au service d'état civil ?",
     choices: [],
@@ -1657,7 +1770,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 207,
+    id: "b4wUu17o3W",
     category: "Vivre dans la société française",
     question: "Quand faut-il déclarer son enfant au service d'état civil ?",
     choices: [],
@@ -1665,7 +1778,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 208,
+    id: "hjEurHm8DA",
     category: "Vivre dans la société française",
     question: "Quel numéro d'urgence permet d'appeler la police ?",
     choices: [],
@@ -1673,7 +1786,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 209,
+    id: "pejf11pSb9",
     category: "Vivre dans la société française",
     question: "Quel numéro d'urgence permet d'appeler le SAMU ?",
     choices: [],
@@ -1681,7 +1794,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 210,
+    id: "LNpjWYW4cM",
     category: "Vivre dans la société française",
     question: "Auprès de quelle institution les parents peuvent inscrire leurs enfants à l'école publique ?",
     choices: [],
@@ -1689,7 +1802,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 211,
+    id: "979hmcO3Uk",
     category: "Vivre dans la société française",
     question: "En cas de divorce, qui exerce l'autorité parentale ?",
     choices: [],
@@ -1697,7 +1810,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 212,
+    id: "LUKJ9ZP7Qo",
     category: "Vivre dans la société française",
     question: "Quelle aide permet aux personnes qui ont des difficultés financières d'avoir un avocat ?",
     choices: [],
@@ -1705,7 +1818,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 213,
+    id: "Rz_1Oyb1dN",
     category: "Vivre dans la société française",
     question: "Qui peut demander le divorce de personnes mariées ?",
     choices: [],
@@ -1713,7 +1826,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 214,
+    id: "dafm3hsMdC",
     category: "Vivre dans la société française",
     question: "Auprès de quel organisme faut-il demander le remboursement des frais de santé ?",
     choices: [],
@@ -1721,7 +1834,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 215,
+    id: "0lDkgbSW0W",
     category: "Vivre dans la société française",
     question: "La contraception :",
     choices: [],
@@ -1729,7 +1842,15 @@ const questions = [
     explanation: "",
   },
   {
-    id: 216,
+    id: "BtNpuslJ7e",
+    category: "Vivre dans la société française",
+    question: "Qu'est-ce que le principe de confidentialité dans le domaine de la santé ?",
+    choices: [],
+    correctIndex: 0,
+    explanation: "",
+  },
+  {
+    id: "ctDWvd41zW",
     category: "Vivre dans la société française",
     question: "À quoi sert la carte Vitale ?",
     choices: [],
@@ -1737,7 +1858,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 217,
+    id: "X3D0MPnYtX",
     category: "Vivre dans la société française",
     question: "À quoi sert une mutuelle santé ?",
     choices: [],
@@ -1745,7 +1866,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 218,
+    id: "MtzLXr71mk",
     category: "Vivre dans la société française",
     question: "Qu'est-ce que le tiers payant ?",
     choices: [],
@@ -1753,7 +1874,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 219,
+    id: "QsaRg8K_2B",
     category: "Vivre dans la société française",
     question: "L'inscription à l'Assurance maladie est :",
     choices: [],
@@ -1761,7 +1882,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 220,
+    id: "NYU4bxgHyg",
     category: "Vivre dans la société française",
     question: "L'avortement est-il possible en France ?",
     choices: [],
@@ -1769,7 +1890,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 221,
+    id: "1qG1vMUq8h",
     category: "Vivre dans la société française",
     question: "Travailler sans être déclaré est :",
     choices: [],
@@ -1777,7 +1898,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 222,
+    id: "lVogu16Brc",
     category: "Vivre dans la société française",
     question: "Qu'est-ce que le SMIC ?",
     choices: [],
@@ -1785,7 +1906,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 223,
+    id: "uIx_u3dgXJ",
     category: "Vivre dans la société française",
     question: "Quelle est la première démarche à réaliser pour chercher un emploi ?",
     choices: [],
@@ -1793,7 +1914,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 224,
+    id: "EXwTfSrcMI",
     category: "Vivre dans la société française",
     question: "Quelle est la durée légale du temps de travail par semaine ?",
     choices: [],
@@ -1801,7 +1922,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 225,
+    id: "IWFXbppk43",
     category: "Vivre dans la société française",
     question: "Qui peut demander un congé parental d'éducation ?",
     choices: [],
@@ -1809,7 +1930,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 226,
+    id: "naClCdYdUH",
     category: "Vivre dans la société française",
     question: "Une personne étrangère, en situation régulière, peut créer son entreprise :",
     choices: [],
@@ -1817,7 +1938,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 227,
+    id: "5SVuP9UVtL",
     category: "Vivre dans la société française",
     question: "Une femme peut-elle créer son entreprise ?",
     choices: [],
@@ -1825,7 +1946,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 228,
+    id: "8ssBPQPOqb",
     category: "Vivre dans la société française",
     question: "Quels sont les textes qui définissent les règles au travail ?",
     choices: [],
@@ -1833,7 +1954,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 229,
+    id: "hvLJcnmcMx",
     category: "Vivre dans la société française",
     question: "Quelles sont les affaires traitées par le conseil de prud'hommes ?",
     choices: [],
@@ -1841,7 +1962,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 230,
+    id: "blvdJfDadS",
     category: "Vivre dans la société française",
     question: "Qui a le droit de se syndiquer ?",
     choices: [],
@@ -1849,7 +1970,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 231,
+    id: "8hy6ySUpyn",
     category: "Vivre dans la société française",
     question: "Est-il possible de licencier une femme enceinte ou en congé maternité, en raison de sa grossesse ?",
     choices: [],
@@ -1857,7 +1978,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 232,
+    id: "3ymPlXbhKi",
     category: "Vivre dans la société française",
     question: "L'instruction des enfants est obligatoire de :",
     choices: [],
@@ -1865,7 +1986,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 233,
+    id: "14W3zpi2IV",
     category: "Vivre dans la société française",
     question: "Des parents ne respectent pas l'obligation d'instruction pour leurs enfants. Quelle sanction maximale risquent-ils ?",
     choices: [],
@@ -1873,7 +1994,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 234,
+    id: "pN_KXoeh_y",
     category: "Vivre dans la société française",
     question: "Quelle est la définition de l'autorité parentale ?",
     choices: [],
@@ -1881,7 +2002,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 235,
+    id: "yWSD_dfSzK",
     category: "Vivre dans la société française",
     question: "Quel motif d'absence est accepté par l'école ?",
     choices: [],
@@ -1889,7 +2010,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 236,
+    id: "sK2ZTnEqGq",
     category: "Vivre dans la société française",
     question: "Jusqu'à quel âge l'école est-elle obligatoire ?",
     choices: [],
@@ -1897,7 +2018,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 237,
+    id: "lc5VcXCI4G",
     category: "Vivre dans la société française",
     question: "À quel âge commence l'instruction obligatoire des enfants ?",
     choices: [],
@@ -1905,7 +2026,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 238,
+    id: "24eZdxqIob",
     category: "Vivre dans la société française",
     question: "Comment s'appellent les établissements scolaires que les élèves intègrent après l'école élémentaire ?",
     choices: [],
@@ -1913,7 +2034,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 239,
+    id: "N6w3erJORx",
     category: "Vivre dans la société française",
     question: "En tant que parent d'élève, il est possible de :",
     choices: [],
@@ -1921,7 +2042,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 240,
+    id: "dwENdnRko5",
     category: "Vivre dans la société française",
     question: "Quelle instruction est prévue pour les enfants qui ne parlent pas français ?",
     choices: [],
@@ -1929,7 +2050,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 241,
+    id: "yAu3hTwH6m",
     category: "Vivre dans la société française",
     question: "S'agissant de l'accueil des enfants en situation de handicap à l'école, laquelle des propositions est vraie ?",
     choices: [],
@@ -1937,7 +2058,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 242,
+    id: "mdJvwnMnyU",
     category: "Vivre dans la société française",
     question: "Depuis le 1er juillet 2021, quelle est la durée du congé paternité ?",
     choices: [],
@@ -1945,7 +2066,7 @@ const questions = [
     explanation: "",
   },
   {
-    id: 243,
+    id: "9xMCmC4Ee5",
     category: "Vivre dans la société française",
     question: "Est-ce possible de punir physiquement ses enfants ?",
     choices: [],
