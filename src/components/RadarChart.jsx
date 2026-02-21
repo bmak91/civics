@@ -65,9 +65,10 @@ export default function RadarChart({ categories, sessions, onReset }) {
   });
   const coveragePolygonStr = coveragePoints.map((p) => p.join(",")).join(" ");
 
-  // Accuracy polygon (% correct)
+  // Mastery polygon (correct / total questions in category)
   const dataPoints = categories.map((cat, i) => {
-    const r = RADIUS * (cat.pct / 100);
+    const mastery = cat.total > 0 ? cat.correct / cat.total : 0;
+    const r = RADIUS * mastery;
     return polarToXY(i * angleStep, r);
   });
   const dataPolygonStr = dataPoints.map((p) => p.join(",")).join(" ");
@@ -192,7 +193,7 @@ export default function RadarChart({ categories, sessions, onReset }) {
             </svg>
           </div>
           <div className="radar-legend-inline">
-            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(49,130,206,0.25)", border: "1.5px solid #3182ce" }} /> Accuracy</span>
+            <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(49,130,206,0.25)", border: "1.5px solid #3182ce" }} /> Mastery</span>
             <span className="radar-legend-swatch"><span className="radar-swatch-box" style={{ background: "rgba(160,174,192,0.2)", border: "1.5px dashed #a0aec0" }} /> Coverage</span>
           </div>
           <div className="radar-tooltip-area">
