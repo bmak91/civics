@@ -143,7 +143,9 @@ export default function App() {
   return (
     <div className="app">
       <ScrollToTop />
-      <h1>🇫🇷 Coach Civique</h1>
+      <header className="app-header">
+        <h1>🇫🇷 Coach Civique <span>Préparez l'examen civique de naturalisation</span></h1>
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
