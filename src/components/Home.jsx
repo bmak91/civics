@@ -62,7 +62,7 @@ export default function Home() {
 
   return (
     <div className="home">
-      <Stats categories={radarCategories} sessions={sessions} categoryOf={categoryOf} onReset={hasStats ? handleReset : null} />
+      <Stats categories={radarCategories} sessions={sessions} categoryOf={categoryOf} onReset={hasStats ? handleReset : null} onImport={() => { setStats(computeCategoryStats()); setSessions(getTestSessions()); }} />
 
       <p className="home-subtitle">Choisissez votre mode de révision</p>
       <div className="mode-cards">

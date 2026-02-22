@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 
 const ATTEMPTS_KEY = "civics-attempts";
 const SESSIONS_KEY = "civics-test-sessions";
+const SEEN_KEY = "civics-test-seen";
 
 // --- Attempts ---
 
@@ -99,5 +100,39 @@ export function getTestSessions() {
 export function resetAllStats() {
   localStorage.removeItem(ATTEMPTS_KEY);
   localStorage.removeItem(SESSIONS_KEY);
-  localStorage.removeItem("civics-test-seen");
+  localStorage.removeItem(SEEN_KEY);
+}
+
+export function exportStats() {
+  const data = {};
+  for (const key of [ATTEMPTS_KEY, SESSIONS_KEY, SEEN_KEY]) {
+    const raw = localStorage.getItem(key);
+    if (raw !== null) data[key] = JSON.parse(raw);
+  }
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "coach-civique-stats.json";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+export function importStats(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const data = JSON.parse(reader.result);
+        for (const key of [ATTEMPTS_KEY, SESSIONS_KEY, SEEN_KEY]) {
+          if (key in data) localStorage.setItem(key, JSON.stringify(data[key]));
+        }
+        resolve();
+      } catch (e) {
+        reject(e);
+      }
+    };
+    reader.onerror = () => reject(reader.error);
+    reader.readAsText(file);
+  });
 }

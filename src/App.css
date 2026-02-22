@@ -627,6 +627,49 @@
 }
 
 .reset-stats-btn:hover {
+  color: #4a5568;
+  border-color: #cbd5e0;
+}
+
+/* Overflow menu */
+.overflow-menu {
+  position: relative;
+}
+
+.overflow-menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 140px;
+  z-index: 10;
+  padding: 4px;
+}
+
+.overflow-menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 0.45rem 0.75rem;
+  background: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  text-align: left;
+  cursor: pointer;
+}
+
+.overflow-menu-dropdown button:hover {
+  background: #f7fafc;
+}
+
+.overflow-menu-dropdown .overflow-menu-danger {
   color: #e53e3e;
-  border-color: #feb2b2;
+}
+
+.overflow-menu-dropdown .overflow-menu-danger:hover {
+  background: #fff5f5;
 }
