@@ -20,6 +20,18 @@
   font-style: italic;
 }
 
+.app-footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+.app-footer a {
+  color: #718096;
+}
+
 /* Flashcard */
 .flashcard {
   background: #fff;

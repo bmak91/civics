@@ -194,6 +194,9 @@ export default function App() {
           }
         />
       </Routes>
+      <footer className="app-footer">
+        Un problème ? <a href="mailto:feedback@coach-civique.fr">Signalez-le</a>
+      </footer>
     </div>
   );
 }
