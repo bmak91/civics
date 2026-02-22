@@ -27,6 +27,17 @@ export function recordAttempt(questionId, choiceId, displayIndex, correct, sessi
   if (sessionId) entry.sessionId = sessionId;
   attempts[questionId].push(entry);
   saveAttempts(attempts);
+
+  // Wrong answers reduce seen count so the question resurfaces sooner
+  if (!correct) {
+    try {
+      const seen = JSON.parse(localStorage.getItem(SEEN_KEY)) || {};
+      if (seen[questionId]) {
+        seen[questionId] = Math.max(0, seen[questionId] - 0.5);
+        localStorage.setItem(SEEN_KEY, JSON.stringify(seen));
+      }
+    } catch {}
+  }
 }
 
 export function getAttempts() {
