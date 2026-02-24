@@ -23,15 +23,14 @@ function computeCategoryStats() {
     categories[q.category].total++;
   }
 
-  // Aggregate attempts per category
+  // Aggregate attempts per category (mastery = last answer per question)
   for (const [qId, qAttempts] of Object.entries(attempts)) {
     const cat = categoryOf[qId];
     if (!cat || !categories[cat]) continue;
     categories[cat].attempted++;
-    for (const a of qAttempts) {
-      categories[cat].attempts++;
-      if (a.correct) categories[cat].correct++;
-    }
+    categories[cat].attempts += qAttempts.length;
+    const lastAttempt = qAttempts[qAttempts.length - 1];
+    if (lastAttempt?.correct) categories[cat].correct++;
   }
 
   return categories;
