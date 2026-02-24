@@ -52,7 +52,7 @@ export default function Home() {
 
   const radarCategories = Object.entries(stats).map(([category, s]) => ({
     label: category,
-    pct: s.attempts > 0 ? Math.round((s.correct / s.attempts) * 100) : 0,
+    pct: s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0,
     attempted: s.attempted,
     total: s.total,
     correct: s.correct,
