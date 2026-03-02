@@ -15,6 +15,9 @@
   <!-- Subtitle -->
   <text x="600" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#90cdf4">Préparation à l'examen de</text>
   <text x="600" y="385" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#90cdf4">naturalisation française</text>
+  <!-- CTA button -->
+  <rect x="430" y="450" width="340" height="60" rx="30" fill="#fff"/>
+  <text x="600" y="489" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#1a365d">Entraînez-vous gratuitement</text>
   <!-- Bottom accent -->
   <rect x="0" y="622" width="400" height="8" fill="#002395"/>
   <rect x="400" y="622" width="400" height="8" fill="#fff"/>
