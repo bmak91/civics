@@ -8,6 +8,7 @@ import allQuestions from "./data/questions";
 import { SLUG_TO_CATEGORY } from "./data/categories";
 import pickTestQuestions from "./utils/pickTestQuestions";
 import { startTestSession, updateTestSession, completeTestSession, getTestSession, getAttempts } from "./utils/tracker";
+import useDocumentTitle from "./utils/useDocumentTitle";
 import "./App.css";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
@@ -146,6 +147,7 @@ export default function App() {
       <header className="app-header">
         <h1>🇫🇷 Coach Civique <span>Préparez l'examen civique de naturalisation</span></h1>
       </header>
+      <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
@@ -194,6 +196,7 @@ export default function App() {
           }
         />
       </Routes>
+      </main>
       <footer className="app-footer">
         Un problème ? <a href="mailto:feedback@coach-civique.fr">Signalez-le</a>
         <span className="footer-sep">·</span>
@@ -210,6 +213,8 @@ function StudyQuestion({ onAnswer, onNext, onHome, score }) {
   const navigate = useNavigate();
   const qs = getStudyQuestions(slug);
   const currentIndex = qs.findIndex((q) => q.id === questionId);
+  const categoryName = SLUG_TO_CATEGORY[slug] || "Toutes les questions";
+  useDocumentTitle(`Révision — ${categoryName}`);
 
   if (currentIndex === -1) {
     navigate("/", { replace: true });
@@ -233,6 +238,7 @@ function StudyQuestion({ onAnswer, onNext, onHome, score }) {
 
 function StudyResults({ score, onRestart, onHome }) {
   const { slug } = useParams();
+  useDocumentTitle("Résultats — Révision");
   const qs = getStudyQuestions(slug);
 
   return (
@@ -249,6 +255,7 @@ function StudyResults({ score, onRestart, onHome }) {
 function TestQuestion({ onAnswer, onNext, onHome, score }) {
   const { sessionId, questionId } = useParams();
   const navigate = useNavigate();
+  useDocumentTitle("Examen blanc");
 
   const resolved = resolveSessionQuestions(sessionId);
   if (!resolved) {
@@ -283,6 +290,7 @@ function TestQuestion({ onAnswer, onNext, onHome, score }) {
 function TestResults({ score, onRestart, onHome }) {
   const { sessionId } = useParams();
   const navigate = useNavigate();
+  useDocumentTitle("Résultats — Examen blanc");
 
   const resolved = resolveSessionQuestions(sessionId);
   if (!resolved) {

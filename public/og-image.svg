@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a365d"/>
+      <stop offset="100%" stop-color="#2b6cb0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- French flag stripe at top -->
+  <rect x="0" y="0" width="400" height="8" fill="#002395"/>
+  <rect x="400" y="0" width="400" height="8" fill="#fff"/>
+  <rect x="800" y="0" width="400" height="8" fill="#ED2939"/>
+  <!-- Title -->
+  <text x="600" y="260" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="#fff">Coach Civique</text>
+  <!-- Subtitle -->
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#90cdf4">Préparation à l'examen de</text>
+  <text x="600" y="385" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#90cdf4">naturalisation française</text>
+  <!-- Bottom accent -->
+  <rect x="0" y="622" width="400" height="8" fill="#002395"/>
+  <rect x="400" y="622" width="400" height="8" fill="#fff"/>
+  <rect x="800" y="622" width="400" height="8" fill="#ED2939"/>
+</svg>

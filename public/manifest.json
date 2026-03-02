@@ -1,0 +1,17 @@
+{
+  "name": "Coach Civique — Préparation à l'examen de naturalisation française",
+  "short_name": "Coach Civique",
+  "description": "Révisez les questions de l'examen civique de naturalisation française. Entraînez-vous par catégorie, suivez vos progrès et passez des examens blancs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7fafc",
+  "theme_color": "#1a365d",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

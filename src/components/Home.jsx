@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getAttempts, getTestSessions, resetAllStats } from "../utils/tracker";
 import allQuestions from "../data/questions";
 import Stats from "./Stats";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 const questions = allQuestions.filter((q) => q.choices.length > 0);
 
@@ -37,6 +38,7 @@ function computeCategoryStats() {
 }
 
 export default function Home() {
+  useDocumentTitle(null);
   const [stats, setStats] = useState(() => computeCategoryStats());
   const [sessions, setSessions] = useState(() => getTestSessions());
 

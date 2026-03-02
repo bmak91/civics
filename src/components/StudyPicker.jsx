@@ -7,6 +7,7 @@ import {
   VIVRE_EN_SOCIETE,
   CATEGORY_SLUGS,
 } from "../data/categories";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 const CATEGORY_ICONS = {
   [PRINCIPES_ET_VALEURS]: "\u2696\uFE0F",
@@ -23,6 +24,7 @@ const categoryOptions = Object.entries(CATEGORY_ICONS).map(([name, icon]) => ({
 }));
 
 export default function StudyPicker() {
+  useDocumentTitle("Choisir une catégorie");
   return (
     <div className="study-picker">
       <h2 className="study-picker-title">Choisissez une catégorie à réviser</h2>
