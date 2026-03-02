@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import { Routes, Route, useNavigate, useParams, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate, useParams, useLocation, Link, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import StudyPicker from "./components/StudyPicker";
 import Flashcard from "./components/Flashcard";
 import Results from "./components/Results";
+import FAQ from "./components/FAQ";
 import allQuestions from "./data/questions";
 import { SLUG_TO_CATEGORY } from "./data/categories";
 import pickTestQuestions from "./utils/pickTestQuestions";
@@ -145,12 +146,19 @@ export default function App() {
     <div className="app">
       <ScrollToTop />
       <header className="app-header">
-        <h1>🇫🇷 Coach Civique <span>Préparez l'examen civique de naturalisation</span></h1>
+        <Link to="/" className="app-brand">🇫🇷 Coach Civique</Link>
+        <nav className="app-nav">
+          <NavLink to="/" end>Accueil</NavLink>
+          <NavLink to="/study">Révision</NavLink>
+          <NavLink to="/test" end={false}>Examen</NavLink>
+          <NavLink to="/faq">FAQ</NavLink>
+        </nav>
       </header>
       <main>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
+        <Route path="/faq" element={<FAQ />} />
         <Route path="/study" element={<StudyPicker />} />
         <Route path="/study/:slug" element={<StartStudy onStart={handleStudyStart} />} />
         <Route

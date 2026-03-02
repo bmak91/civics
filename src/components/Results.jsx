@@ -3,7 +3,7 @@ export default function Results({ score, total, onRestart, onHome, mode }) {
 
   return (
     <div className="results">
-      <h2>{mode === "test" ? "Test Results" : "Study Complete"}</h2>
+      <h1 className="results-title">{mode === "test" ? "Test Results" : "Study Complete"}</h1>
       <div className="score">
         {score} / {total}
       </div>

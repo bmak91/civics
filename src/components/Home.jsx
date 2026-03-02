@@ -63,19 +63,29 @@ export default function Home() {
 
   return (
     <div className="home">
+      <h1 className="home-title">Préparation à l'examen civique de naturalisation française</h1>
+
       <Stats categories={radarCategories} sessions={sessions} categoryOf={categoryOf} onReset={hasStats ? handleReset : null} onImport={() => { setStats(computeCategoryStats()); setSessions(getTestSessions()); }} />
 
-      <p className="home-subtitle">Choisissez votre mode de révision</p>
+      <p className="home-blurb">
+        Entraînez-vous gratuitement avec plus de {questions.length} questions couvrant les principes de la République,
+        le système institutionnel, les droits et devoirs, l'histoire et la vie en société française.
+        Révisez par catégorie ou testez vos connaissances avec des examens blancs de 40 questions.
+      </p>
+
+      <h2 className="home-subtitle">Choisissez votre mode de révision</h2>
       <div className="mode-cards">
         <Link to="/study" className="mode-card">
-          <div className="mode-card-header"><span className="mode-icon">📖</span><h2>Révision</h2></div>
+          <div className="mode-card-header"><span className="mode-icon">📖</span><h3>Révision</h3></div>
           <p>Parcourez toutes les questions à votre rythme. Consultez les explications pour mieux comprendre.</p>
         </Link>
         <Link to="/test/new" className="mode-card">
-          <div className="mode-card-header"><span className="mode-icon">✍️</span><h2>Examen blanc</h2></div>
+          <div className="mode-card-header"><span className="mode-icon">✍️</span><h3>Examen blanc</h3></div>
           <p>Répondez à 40 questions aléatoires et obtenez un score. Les questions changent à chaque session.</p>
         </Link>
       </div>
+
+      <p className="home-faq-link">Des questions ? <Link to="/faq">Consultez la FAQ</Link></p>
     </div>
   );
 }

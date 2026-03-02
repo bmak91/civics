@@ -27,7 +27,7 @@ export default function StudyPicker() {
   useDocumentTitle("Choisir une catégorie");
   return (
     <div className="study-picker">
-      <h2 className="study-picker-title">Choisissez une catégorie à réviser</h2>
+      <h1 className="study-picker-title">Choisissez une catégorie à réviser</h1>
       <div className="study-picker-list">
         <Link to="/study/all" className="study-picker-btn">
           <span className="study-picker-icon">📖</span>
