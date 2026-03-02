@@ -68,7 +68,7 @@ export default function FAQ() {
               <span>{item.q}</span>
               <span className="faq-chevron">{open === i ? "−" : "+"}</span>
             </button>
-            {open === i && <p className="faq-answer">{item.a}</p>}
+            <p className="faq-answer" hidden={open !== i}>{item.a}</p>
           </div>
         ))}
       </div>
