@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Routes, Route, useNavigate, useParams, useLocation, Link, NavLink } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useParams, useLocation, Link, NavLink } from "react-router-dom";
 import Home from "./components/Home";
 import StudyPicker from "./components/StudyPicker";
 import Flashcard from "./components/Flashcard";
@@ -79,14 +79,14 @@ export default function App() {
     const qs = pickTestQuestions(questions);
     const sessionId = startTestSession(qs.map((q) => q.id));
     currentSessionId.current = sessionId;
-    navigate(`/test/${sessionId}/${qs[0].id}`, { replace: true });
+    navigate(`/examen/${sessionId}/${qs[0].id}`, { replace: true });
   }
 
   function handleStudyStart(slug) {
     setScore(0);
     answeredCount.current = 0;
     const qs = resetStudyOrder(slug);
-    navigate(`/study/${slug}/${qs[0].id}`, { replace: true });
+    navigate(`/revision/${slug}/${qs[0].id}`, { replace: true });
   }
 
   function handleHome() {
@@ -103,10 +103,10 @@ export default function App() {
       const qs = pickTestQuestions(questions);
       const sessionId = startTestSession(qs.map((q) => q.id));
       currentSessionId.current = sessionId;
-      navigate(`/test/${sessionId}/${qs[0].id}`);
+      navigate(`/examen/${sessionId}/${qs[0].id}`);
     } else {
       const qs = resetStudyOrder(slug);
-      navigate(`/study/${slug}/${qs[0].id}`);
+      navigate(`/revision/${slug}/${qs[0].id}`);
     }
   }
 
@@ -126,18 +126,18 @@ export default function App() {
     if (currentIndex + 1 < qs.length) {
       const nextId = qs[currentIndex + 1].id;
       if (mode === "test") {
-        navigate(`/test/${sessionId}/${nextId}`);
+        navigate(`/examen/${sessionId}/${nextId}`);
       } else {
-        navigate(`/study/${slug}/${nextId}`);
+        navigate(`/revision/${slug}/${nextId}`);
       }
     } else {
       if (mode === "test" && sessionId) {
         completeTestSession(sessionId);
       }
       if (mode === "test") {
-        navigate(`/test/${sessionId}/results`);
+        navigate(`/examen/${sessionId}/results`);
       } else {
-        navigate(`/study/${slug}/results`);
+        navigate(`/revision/${slug}/results`);
       }
     }
   }
@@ -149,20 +149,20 @@ export default function App() {
         <Link to="/" className="app-brand">🇫🇷 Coach Civique</Link>
         <nav className="app-nav">
           <NavLink to="/" end>Accueil</NavLink>
-          <NavLink to="/study">Révision</NavLink>
-          <NavLink to="/test/new">Examen</NavLink>
+          <NavLink to="/revision">Révision</NavLink>
+          <NavLink to="/examen/nouveau">Examen</NavLink>
           <NavLink to="/faq">FAQ</NavLink>
         </nav>
       </header>
       <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/test/new" element={<StartTest onStart={handleStartTest} />} />
+        <Route path="/examen/nouveau" element={<StartTest onStart={handleStartTest} />} />
         <Route path="/faq" element={<FAQ />} />
-        <Route path="/study" element={<StudyPicker />} />
-        <Route path="/study/:slug" element={<StartStudy onStart={handleStudyStart} />} />
+        <Route path="/revision" element={<StudyPicker />} />
+        <Route path="/revision/:slug" element={<StartStudy onStart={handleStudyStart} />} />
         <Route
-          path="/study/:slug/results"
+          path="/revision/:slug/results"
           element={
             <StudyResults
               score={score}
@@ -172,7 +172,7 @@ export default function App() {
           }
         />
         <Route
-          path="/test/:sessionId/results"
+          path="/examen/:sessionId/results"
           element={
             <TestResults
               score={score}
@@ -182,7 +182,7 @@ export default function App() {
           }
         />
         <Route
-          path="/study/:slug/:questionId"
+          path="/revision/:slug/:questionId"
           element={
             <StudyQuestion
               onAnswer={(correct) => handleAnswer(null, correct)}
@@ -193,7 +193,7 @@ export default function App() {
           }
         />
         <Route
-          path="/test/:sessionId/:questionId"
+          path="/examen/:sessionId/:questionId"
           element={
             <TestQuestion
               onAnswer={handleAnswer}
@@ -203,6 +203,10 @@ export default function App() {
             />
           }
         />
+        {/* Redirects from old English paths */}
+        <Route path="/study" element={<Navigate to="/revision" replace />} />
+        <Route path="/study/*" element={<NavigateStudy />} />
+        <Route path="/test/*" element={<NavigateTest />} />
       </Routes>
       </main>
       <footer className="app-footer">
@@ -356,4 +360,17 @@ function StartStudy({ onStart }) {
     }
   }, [slug, onStart]);
   return null;
+}
+
+function NavigateStudy() {
+  const params = useParams();
+  const splat = params["*"] || "";
+  return <Navigate to={`/revision/${splat}`} replace />;
+}
+
+function NavigateTest() {
+  const params = useParams();
+  const splat = params["*"] || "";
+  const mapped = splat === "new" ? "nouveau" : splat;
+  return <Navigate to={`/examen/${mapped}`} replace />;
 }

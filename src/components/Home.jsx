@@ -75,11 +75,11 @@ export default function Home() {
 
       <h2 className="home-subtitle">Choisissez votre mode de révision</h2>
       <div className="mode-cards">
-        <Link to="/study" className="mode-card">
+        <Link to="/revision" className="mode-card">
           <div className="mode-card-header"><span className="mode-icon">📖</span><h3>Révision</h3></div>
           <p>Parcourez toutes les questions à votre rythme. Consultez les explications pour mieux comprendre.</p>
         </Link>
-        <Link to="/test/new" className="mode-card">
+        <Link to="/examen/nouveau" className="mode-card">
           <div className="mode-card-header"><span className="mode-icon">✍️</span><h3>Examen blanc</h3></div>
           <p>Répondez à 40 questions aléatoires et obtenez un score. Les questions changent à chaque session.</p>
         </Link>

@@ -29,12 +29,12 @@ export default function StudyPicker() {
     <div className="study-picker">
       <h1 className="study-picker-title">Choisissez une catégorie à réviser</h1>
       <div className="study-picker-list">
-        <Link to="/study/all" className="study-picker-btn">
+        <Link to="/revision/all" className="study-picker-btn">
           <span className="study-picker-icon">📖</span>
           Toutes les questions
         </Link>
         {categoryOptions.map(({ name, icon, slug }) => (
-          <Link key={name} to={`/study/${slug}`} className="study-picker-btn">
+          <Link key={name} to={`/revision/${slug}`} className="study-picker-btn">
             <span className="study-picker-icon">{icon}</span>
             {name}
           </Link>

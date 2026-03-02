@@ -11,32 +11,32 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study</loc>
+    <loc>https://coach-civique.fr/revision</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study/principes</loc>
+    <loc>https://coach-civique.fr/revision/principes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study/institutions</loc>
+    <loc>https://coach-civique.fr/revision/institutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study/droits</loc>
+    <loc>https://coach-civique.fr/revision/droits</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study/histoire</loc>
+    <loc>https://coach-civique.fr/revision/histoire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/study/societe</loc>
+    <loc>https://coach-civique.fr/revision/societe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
