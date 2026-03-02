@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://coach-civique.fr/</loc>
+    <loc>https://www.coach-civique.fr/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/faq</loc>
+    <loc>https://www.coach-civique.fr/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision</loc>
+    <loc>https://www.coach-civique.fr/revision</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision/principes</loc>
+    <loc>https://www.coach-civique.fr/revision/principes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision/institutions</loc>
+    <loc>https://www.coach-civique.fr/revision/institutions</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision/droits</loc>
+    <loc>https://www.coach-civique.fr/revision/droits</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision/histoire</loc>
+    <loc>https://www.coach-civique.fr/revision/histoire</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://coach-civique.fr/revision/societe</loc>
+    <loc>https://www.coach-civique.fr/revision/societe</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
