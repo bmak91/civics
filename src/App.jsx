@@ -150,7 +150,7 @@ export default function App() {
         <nav className="app-nav">
           <NavLink to="/" end>Accueil</NavLink>
           <NavLink to="/study">Révision</NavLink>
-          <NavLink to="/test" end={false}>Examen</NavLink>
+          <NavLink to="/test/new">Examen</NavLink>
           <NavLink to="/faq">FAQ</NavLink>
         </nav>
       </header>
@@ -326,14 +326,24 @@ function ScrollToTop() {
 }
 
 function StartTest({ onStart }) {
-  const started = useRef(false);
-  useEffect(() => {
-    if (!started.current) {
-      started.current = true;
-      onStart();
-    }
-  }, [onStart]);
-  return null;
+  useDocumentTitle("Examen blanc");
+  return (
+    <div className="start-test">
+      <h1 className="start-test-title">Examen blanc</h1>
+      <div className="start-test-info">
+        <p>40 questions aléatoires tirées de toutes les catégories</p>
+        <ul>
+          <li>28 questions de connaissances</li>
+          <li>12 mises en situation</li>
+          <li>Score minimum pour réussir : 32/40 (80 %)</li>
+        </ul>
+      </div>
+      <button className="start-test-btn" onClick={onStart}>
+        <svg className="start-test-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 9.5V13.5L14.5 15M12 5C7.30558 5 3.5 8.80558 3.5 13.5C3.5 18.1944 7.30558 22 12 22C16.6944 22 20.5 18.1944 20.5 13.5C20.5 8.80558 16.6944 5 12 5ZM12 5V2M10 2H14M20.329 5.59204L18.829 4.09204L19.579 4.84204M3.67102 5.59204L5.17102 4.09204L4.42102 4.84204"/></svg>
+        Commencer
+      </button>
+    </div>
+  );
 }
 
 function StartStudy({ onStart }) {

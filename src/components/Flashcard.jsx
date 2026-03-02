@@ -39,7 +39,6 @@ export default function Flashcard({ question, onNext, onAnswer, onHome, current,
           Question {current} of {total}
           {mode === "test" && <span className="live-score"> &middot; Score: {score}/{total}</span>}
         </div>
-        <button className="home-btn" onClick={onHome}>Home</button>
       </div>
 
       <h2 className="question">{question.question}</h2>
