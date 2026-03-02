@@ -24,7 +24,7 @@ const categoryOptions = Object.entries(CATEGORY_ICONS).map(([name, icon]) => ({
 }));
 
 export default function StudyPicker() {
-  useDocumentTitle("Choisir une catégorie");
+  useDocumentTitle("Révision QCM civique 2026 par catégorie");
   return (
     <div className="study-picker">
       <h1 className="study-picker-title">Choisissez une catégorie à réviser</h1>

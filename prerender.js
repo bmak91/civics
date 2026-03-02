@@ -6,10 +6,10 @@ import { createServer } from "vite";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const routes = [
-  { url: "/", title: "Coach Civique — Préparation à l'examen de naturalisation française" },
-  { url: "/faq", title: "Questions fréquentes — Coach Civique" },
-  { url: "/revision", title: "Choisir une catégorie — Coach Civique" },
-  { url: "/examen/nouveau", title: "Examen blanc — Coach Civique" },
+  { url: "/", title: "Coach Civique — Préparez l'examen civique 2026 gratuitement" },
+  { url: "/faq", title: "Questions fréquentes — Examen civique 2026 — Coach Civique" },
+  { url: "/revision", title: "Révision QCM civique 2026 par catégorie — Coach Civique" },
+  { url: "/examen/nouveau", title: "Examen blanc — QCM civique 2026 — Coach Civique" },
 ];
 
 async function prerender() {

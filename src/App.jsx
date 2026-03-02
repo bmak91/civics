@@ -267,7 +267,7 @@ function StudyResults({ score, onRestart, onHome }) {
 function TestQuestion({ onAnswer, onNext, onHome, score }) {
   const { sessionId, questionId } = useParams();
   const navigate = useNavigate();
-  useDocumentTitle("Examen blanc");
+  useDocumentTitle("Examen blanc — QCM civique 2026");
 
   const resolved = resolveSessionQuestions(sessionId);
   if (!resolved) {
@@ -330,7 +330,7 @@ function ScrollToTop() {
 }
 
 function StartTest({ onStart }) {
-  useDocumentTitle("Examen blanc");
+  useDocumentTitle("Examen blanc — QCM civique 2026");
   return (
     <div className="start-test">
       <h1 className="start-test-title">Examen blanc</h1>

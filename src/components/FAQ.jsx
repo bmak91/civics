@@ -47,7 +47,7 @@ const faqJsonLd = JSON.stringify({
 });
 
 export default function FAQ() {
-  useDocumentTitle("Questions fréquentes");
+  useDocumentTitle("Questions fréquentes — Examen civique 2026");
   const [open, setOpen] = useState(null);
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function FAQ() {
 
   return (
     <div className="faq">
-      <h1 className="faq-title">Questions fréquentes</h1>
+      <h1 className="faq-title">Questions fréquentes sur l'examen civique</h1>
       <div className="faq-list">
         {faqs.map((item, i) => (
           <div key={i} className={`faq-item${open === i ? " open" : ""}`}>
