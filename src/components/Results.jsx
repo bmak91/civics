@@ -3,24 +3,24 @@ export default function Results({ score, total, onRestart, onHome, mode }) {
 
   return (
     <div className="results">
-      <h1 className="results-title">{mode === "test" ? "Test Results" : "Study Complete"}</h1>
+      <h1 className="results-title">{mode === "test" ? "Résultats de l'examen" : "Révision terminée"}</h1>
       <div className="score">
         {score} / {total}
       </div>
       <div className="percentage">{percentage}%</div>
       <p className="score-message">
         {percentage >= 80
-          ? "Great job!"
+          ? "Excellent travail !"
           : percentage >= 60
-            ? "Good effort, keep studying!"
-            : "Keep practicing, you'll get there!"}
+            ? "Bon effort, continuez à réviser !"
+            : "Continuez à vous entraîner, vous y arriverez !"}
       </p>
       <div className="results-actions">
         <button className="next-btn" onClick={onRestart}>
-          {mode === "test" ? "New Test" : "Start Over"}
+          {mode === "test" ? "Nouvel examen" : "Recommencer"}
         </button>
         <button className="next-btn secondary" onClick={onHome}>
-          Home
+          Accueil
         </button>
       </div>
     </div>

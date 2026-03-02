@@ -36,8 +36,8 @@ export default function Flashcard({ question, onNext, onAnswer, onHome, current,
     <div className="flashcard">
       <div className="flashcard-header">
         <div className="progress">
-          Question {current} of {total}
-          {mode === "test" && <span className="live-score"> &middot; Score: {score}/{total}</span>}
+          Question {current} sur {total}
+          {mode === "test" && <span className="live-score"> &middot; Score : {score}/{total}</span>}
         </div>
       </div>
 
@@ -70,7 +70,7 @@ export default function Flashcard({ question, onNext, onAnswer, onHome, current,
       {isAnswered && (
         <div className={`explanation ${isCorrect ? "correct" : "wrong"}`}>
           <div className="result-label">
-            {isCorrect ? "Correct!" : "Incorrect"}
+            {isCorrect ? "Bonne réponse !" : "Mauvaise réponse"}
           </div>
           <p>{question.explanation}</p>
         </div>
@@ -78,7 +78,7 @@ export default function Flashcard({ question, onNext, onAnswer, onHome, current,
 
       {isAnswered && (
         <button className="next-btn" onClick={handleNext}>
-          {current < total ? "Next Question" : "See Results"}
+          {current < total ? "Question suivante" : "Voir les résultats"}
         </button>
       )}
     </div>
